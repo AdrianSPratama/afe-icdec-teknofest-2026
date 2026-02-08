@@ -16,11 +16,16 @@ L 4 610 -560 610 -110 {}
 L 4 610 -560 960 -560 {}
 L 4 610 -110 960 -110 {}
 L 4 960 -560 960 -110 {}
+L 4 450 -910 450 -770 {}
+L 4 450 -910 730 -910 {}
+L 4 450 -770 730 -770 {}
+L 4 730 -910 730 -770 {}
 T {BGR CORE} 200 -610 0 0 0.4 0.4 {}
 T {CURVATURE
 CORRECTION} 460 -630 0 0 0.4 0.4 {}
 T {STARTUP 
 CIRCUIT} 740 -630 0 0 0.4 0.4 {}
+T {RC Lowpass Filter} 500 -950 0 0 0.4 0.4 {}
 N 150 -530 370 -530 {lab=VDD}
 N 310 -500 330 -500 {lab=#net1}
 N 260 -500 260 -440 {lab=#net1}
@@ -98,9 +103,15 @@ N 770 -150 860 -150 {lab=VSS}
 N 530 -470 530 -460 {lab=#net4}
 N 530 -400 530 -390 {lab=#net4}
 N 370 -340 370 -320 {lab=VBE2}
-N 370 -470 370 -460 {lab=OUT}
-N 370 -460 370 -400 {lab=OUT}
+N 370 -470 370 -460 {lab=#net5}
+N 370 -460 370 -400 {lab=#net5}
 N 530 -460 530 -400 {lab=#net4}
+N 420 -860 490 -860 {lab=#net5}
+N 420 -670 420 -420 {lab=#net5}
+N 370 -420 420 -420 {lab=#net5}
+N 590 -860 660 -860 {lab=OUT}
+N 490 -860 530 -860 {lab=#net5}
+N 420 -860 420 -670 {lab=#net5}
 C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 100 -160 1 1 {name=x1}
 C {sky130_fd_pr/pfet_01v8.sym} 350 -500 0 0 {name=M1
 W=20
@@ -158,7 +169,7 @@ C {lab_pin.sym} 1090 -540 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 1310 -600 0 0 {name=p8 sig_type=std_logic lab=VSS}
 C {gnd.sym} 1310 -530 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 1090 -600 0 0 {name=p9 sig_type=std_logic lab=VDD}
-C {sky130_fd_pr/corner.sym} 1040 -420 0 0 {name=CORNER only_toplevel=true corner=ss}
+C {sky130_fd_pr/corner.sym} 1040 -420 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {code_shown.sym} 1190 -450 0 0 {name=s1 only_toplevel=false value="
 
 .control
@@ -266,6 +277,17 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {lab_pin.sym} 370 -440 0 1 {name=p6 sig_type=std_logic lab=OUT}
+C {lab_pin.sym} 660 -860 0 1 {name=p6 sig_type=std_logic lab=OUT}
 C {lab_pin.sym} 150 -240 0 1 {name=p11 sig_type=std_logic lab=VBE1}
 C {lab_pin.sym} 370 -250 0 1 {name=p12 sig_type=std_logic lab=VBE2}
+C {capa.sym} 630 -830 0 0 {name=C1
+m=1
+value=6p
+footprint=1206
+device="ceramic capacitor"}
+C {lab_pin.sym} 630 -800 0 0 {name=p5 sig_type=std_logic lab=VSS}
+C {res.sym} 560 -860 1 0 {name=R4
+value=1
+footprint=1206
+device=resistor
+m=1}

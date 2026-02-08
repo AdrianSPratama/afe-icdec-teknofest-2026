@@ -16,6 +16,10 @@ L 4 640 -600 640 -150 {}
 L 4 640 -600 990 -600 {}
 L 4 640 -150 990 -150 {}
 L 4 990 -600 990 -150 {}
+L 4 470 -890 470 -750 {}
+L 4 470 -890 750 -890 {}
+L 4 470 -750 750 -750 {}
+L 4 750 -890 750 -750 {}
 T {BGR CORE} 230 -650 0 0 0.4 0.4 {}
 T {CURVATURE
 CORRECTION} 490 -670 0 0 0.4 0.4 {}
@@ -25,6 +29,7 @@ T {Note:
 BGR core cuma bisa ngelakuin first-order cancellation terhadap gradien suhu (sifatnya cuma linier)
 Untuk menambah fitur second-order cancellation, diterapkan rangkaian + resistor curvature correction
 Startup Circuit dianggep nggak ada, tapi ngebantu biar BGR core gak terjebak di zero-current state} 1070 -250 0 0 0.4 0.4 {}
+T {RC Lowpass Filter} 520 -930 0 0 0.4 0.4 {}
 N 180 -570 400 -570 {lab=VDD}
 N 340 -540 360 -540 {lab=#net1}
 N 290 -540 290 -480 {lab=#net1}
@@ -102,9 +107,14 @@ N 800 -190 890 -190 {lab=VSS}
 N 560 -510 560 -500 {lab=#net4}
 N 560 -440 560 -430 {lab=#net4}
 N 400 -380 400 -360 {lab=VBE2}
-N 400 -510 400 -500 {lab=OUT}
-N 400 -500 400 -440 {lab=OUT}
+N 400 -510 400 -500 {lab=#net5}
+N 400 -500 400 -440 {lab=#net5}
 N 560 -500 560 -440 {lab=#net4}
+N 400 -480 440 -480 {lab=#net5}
+N 440 -840 510 -840 {lab=#net5}
+N 610 -840 680 -840 {lab=OUT}
+N 510 -840 550 -840 {lab=#net5}
+N 440 -840 440 -480 {lab=#net5}
 C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 130 -200 1 1 {name=x1}
 C {sky130_fd_pr/pfet_01v8.sym} 380 -540 0 0 {name=M1
 W=20
@@ -135,7 +145,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {res.sym} 400 -410 0 0 {name=R1
-value=1000k
+value=990k
 footprint=1206
 device=resistor
 m=1}
@@ -156,7 +166,7 @@ spiceprefix=X
 }
 C {lab_pin.sym} 350 -400 0 1 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 230 -400 0 0 {name=p2 sig_type=std_logic lab=VSS}
-C {vsource.sym} 1120 -610 0 0 {name=V1 value=1.8 savecurrent=false}
+C {vsource.sym} 1120 -610 0 0 {name=V1 value=1.62 savecurrent=false}
 C {vsource.sym} 1240 -610 0 0 {name=V2 value=0 savecurrent=false}
 C {lab_pin.sym} 1120 -580 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 1240 -640 0 0 {name=p8 sig_type=std_logic lab=VSS}
@@ -265,7 +275,18 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {lab_pin.sym} 400 -480 0 1 {name=p6 sig_type=std_logic lab=OUT}
 C {lab_pin.sym} 180 -280 0 1 {name=p11 sig_type=std_logic lab=VBE1}
 C {lab_pin.sym} 400 -290 0 1 {name=p12 sig_type=std_logic lab=VBE2}
 C {title.sym} 610 -70 0 0 {name=l2 author="Dzaki Andriansyah"}
+C {lab_pin.sym} 680 -840 0 1 {name=p5 sig_type=std_logic lab=OUT}
+C {capa.sym} 650 -810 0 0 {name=C2
+m=1
+value=4p
+footprint=1206
+device="ceramic capacitor"}
+C {lab_pin.sym} 650 -780 0 0 {name=p10 sig_type=std_logic lab=VSS}
+C {res.sym} 580 -840 1 0 {name=R4
+value=1
+footprint=1206
+device=resistor
+m=1}
