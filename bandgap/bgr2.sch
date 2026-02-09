@@ -166,7 +166,7 @@ spiceprefix=X
 }
 C {lab_pin.sym} 350 -400 0 1 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 230 -400 0 0 {name=p2 sig_type=std_logic lab=VSS}
-C {vsource.sym} 1120 -610 0 0 {name=V1 value=1.62 savecurrent=false}
+C {vsource.sym} 1120 -610 0 0 {name=V1 value=1.8 savecurrent=false}
 C {vsource.sym} 1240 -610 0 0 {name=V2 value=0 savecurrent=false}
 C {lab_pin.sym} 1120 -580 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 1240 -640 0 0 {name=p8 sig_type=std_logic lab=VSS}
