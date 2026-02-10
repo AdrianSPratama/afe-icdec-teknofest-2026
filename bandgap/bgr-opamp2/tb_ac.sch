@@ -4,42 +4,40 @@ K {}
 V {}
 S {}
 E {}
-N 260 -930 290 -930 {lab=VN}
-N 260 -970 290 -970 {lab=VP}
-N 460 -950 480 -950 {lab=OUT}
-N 330 -860 330 -840 {lab=VSS}
-N 480 -890 480 -850 {lab=VSS}
-N 330 -850 480 -850 {lab=VSS}
-N 260 -720 290 -720 {lab=VCM}
-N 260 -680 290 -680 {lab=VCM}
-N 460 -700 480 -700 {lab=OUT2}
-N 430 -700 460 -700 {lab=OUT2}
-N 330 -610 330 -590 {lab=VSS}
-N 480 -640 480 -600 {lab=VSS}
-N 330 -600 480 -600 {lab=VSS}
-N 260 -720 260 -680 {lab=VCM}
-N 450 -420 470 -420 {lab=OUT3}
-N 420 -420 450 -420 {lab=OUT3}
-N 300 -370 300 -350 {lab=VSS}
-N 190 -400 190 -230 {lab=VNr}
-N 450 -420 450 -230 {lab=OUT3}
-N 320 -230 450 -230 {lab=OUT3}
-N 190 -230 260 -230 {lab=VNr}
-N 330 -1040 330 -1000 {lab=VDD}
-N 410 -950 440 -950 {lab=OUT}
-N 330 -900 330 -860 {lab=VSS}
-N 330 -790 330 -750 {lab=VDD}
-N 330 -650 330 -610 {lab=VSS}
-N 140 -440 230 -440 {lab=VNr}
-N 190 -440 190 -400 {lab=VNr}
-N 300 -510 300 -470 {lab=VDDr}
-N 470 -420 540 -420 {lab=OUT3}
-N 230 -440 260 -400 {lab=VNr}
-N 230 -400 260 -440 {lab=VPr}
-N 440 -950 460 -950 {lab=OUT}
-N 410 -700 430 -700 {lab=OUT2}
-N 380 -420 420 -420 {lab=OUT3}
-C {devices/code_shown.sym} 960 -900 0 0 {name=NGSPICE only_toplevel=true
+N 230 -930 260 -930 {lab=VN}
+N 230 -970 260 -970 {lab=VP}
+N 430 -950 450 -950 {lab=OUT}
+N 300 -860 300 -840 {lab=VSS}
+N 450 -890 450 -850 {lab=VSS}
+N 300 -850 450 -850 {lab=VSS}
+N 230 -720 260 -720 {lab=VCM}
+N 230 -680 260 -680 {lab=VCM}
+N 430 -700 450 -700 {lab=OUT2}
+N 400 -700 430 -700 {lab=OUT2}
+N 300 -610 300 -590 {lab=VSS}
+N 230 -720 230 -680 {lab=VCM}
+N 420 -420 440 -420 {lab=OUT3}
+N 390 -420 420 -420 {lab=OUT3}
+N 270 -370 270 -350 {lab=VSS}
+N 160 -400 160 -230 {lab=VNr}
+N 420 -420 420 -230 {lab=OUT3}
+N 290 -230 420 -230 {lab=OUT3}
+N 160 -230 230 -230 {lab=VNr}
+N 300 -1040 300 -1000 {lab=VDD}
+N 380 -950 410 -950 {lab=OUT}
+N 300 -900 300 -860 {lab=VSS}
+N 300 -790 300 -750 {lab=VDD}
+N 300 -650 300 -610 {lab=VSS}
+N 110 -440 200 -440 {lab=VNr}
+N 160 -440 160 -400 {lab=VNr}
+N 270 -510 270 -470 {lab=VDDr}
+N 440 -420 510 -420 {lab=OUT3}
+N 200 -440 230 -400 {lab=VNr}
+N 200 -400 230 -440 {lab=VPr}
+N 410 -950 430 -950 {lab=OUT}
+N 380 -700 400 -700 {lab=OUT2}
+N 350 -420 390 -420 {lab=OUT3}
+C {devices/code_shown.sym} 1030 -890 0 0 {name=NGSPICE only_toplevel=true
 value=".control
   .temp 27
   op
@@ -76,34 +74,29 @@ value=".control
 .endc
 
 "}
-C {lab_pin.sym} 260 -930 0 0 {name=p1 sig_type=std_logic lab=VN}
-C {lab_pin.sym} 260 -970 0 0 {name=p3 sig_type=std_logic lab=VP}
+C {lab_pin.sym} 230 -930 0 0 {name=p1 sig_type=std_logic lab=VN}
+C {lab_pin.sym} 230 -970 0 0 {name=p3 sig_type=std_logic lab=VP}
 C {sky130_fd_pr/corner.sym} 730 -400 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {lab_pin.sym} 480 -950 0 1 {name=p6 sig_type=std_logic lab=OUT}
-C {capa-2.sym} 480 -920 0 0 {name=C2
+C {lab_pin.sym} 450 -950 0 1 {name=p6 sig_type=std_logic lab=OUT}
+C {capa-2.sym} 450 -920 0 0 {name=C2
 m=1
 value=1p
 footprint=1206
 device=polarized_capacitor}
-C {lab_pin.sym} 330 -1040 0 1 {name=p13 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} 330 -840 0 0 {name=p22 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 260 -700 0 0 {name=p16 sig_type=std_logic lab=VCM}
-C {lab_pin.sym} 480 -700 0 1 {name=p17 sig_type=std_logic lab=OUT2}
-C {capa-2.sym} 480 -670 0 0 {name=C1
+C {lab_pin.sym} 300 -1040 0 1 {name=p13 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 300 -840 0 0 {name=p22 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 230 -700 0 0 {name=p16 sig_type=std_logic lab=VCM}
+C {lab_pin.sym} 450 -700 0 1 {name=p17 sig_type=std_logic lab=OUT2}
+C {lab_pin.sym} 300 -790 0 1 {name=p18 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 300 -590 0 0 {name=p19 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 110 -440 0 0 {name=p23 sig_type=std_logic lab=VNr}
+C {lab_pin.sym} 200 -400 0 0 {name=p24 sig_type=std_logic lab=VPr}
+C {lab_pin.sym} 510 -420 0 1 {name=p25 sig_type=std_logic lab=OUT3}
+C {lab_pin.sym} 270 -510 0 1 {name=p26 sig_type=std_logic lab=VDDr}
+C {lab_pin.sym} 270 -350 0 0 {name=p27 sig_type=std_logic lab=VSS}
+C {ind.sym} 260 -230 1 0 {name=L1
 m=1
-value=5p
-footprint=1206
-device=polarized_capacitor}
-C {lab_pin.sym} 330 -790 0 1 {name=p18 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} 330 -590 0 0 {name=p19 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 140 -440 0 0 {name=p23 sig_type=std_logic lab=VNr}
-C {lab_pin.sym} 230 -400 0 0 {name=p24 sig_type=std_logic lab=VPr}
-C {lab_pin.sym} 540 -420 0 1 {name=p25 sig_type=std_logic lab=OUT3}
-C {lab_pin.sym} 300 -510 0 1 {name=p26 sig_type=std_logic lab=VDDr}
-C {lab_pin.sym} 300 -350 0 0 {name=p27 sig_type=std_logic lab=VSS}
-C {ind.sym} 290 -230 1 0 {name=L1
-m=1
-value=10G
+value=1G
 footprint=1206
 device=inductor}
 C {devices/title.sym} 330 -90 0 0 {name=l3 author="Dzaki Andriansyah"}
@@ -131,6 +124,6 @@ C {lab_pin.sym} 690 -670 0 0 {name=p41 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 690 -580 0 0 {name=p42 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 690 -730 0 0 {name=p43 sig_type=std_logic lab=VNr}
 C {lab_pin.sym} 690 -640 0 0 {name=p44 sig_type=std_logic lab=VPr}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp2/folded-cascode-opamp.sym} 160 -790 0 0 {name=x1}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp2/folded-cascode-opamp.sym} 130 -260 0 0 {name=x2}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp2/folded-cascode-opamp.sym} 160 -540 0 0 {name=x3}
+C {afe-icdec-teknofest-2026/bandgap/bgr-opamp2/folded-cascode-opamp.sym} 130 -790 0 0 {name=x1}
+C {afe-icdec-teknofest-2026/bandgap/bgr-opamp2/folded-cascode-opamp.sym} 100 -260 0 0 {name=x2}
+C {afe-icdec-teknofest-2026/bandgap/bgr-opamp2/folded-cascode-opamp.sym} 130 -540 0 0 {name=x3}
