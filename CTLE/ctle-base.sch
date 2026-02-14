@@ -31,6 +31,8 @@ N 500 -400 500 -240 {lab=in_cur}
 N 500 -240 760 -240 {lab=in_cur}
 N 760 -400 760 -240 {lab=in_cur}
 N 540 -370 540 -340 {lab=vss}
+N 820 -850 860 -850 {lab=vss}
+N 560 -850 600 -850 {lab=vss}
 C {title.sym} 160 -30 0 0 {name=l1 author="Adrian Sami Pratama"}
 C {sky130_fd_pr/nfet_01v8.sym} 520 -710 0 0 {name=M1
 W=12.5
@@ -62,9 +64,6 @@ spiceprefix=X
 }
 C {sky130_fd_pr/cap_mim_m3_1.sym} 660 -490 3 0 {name=C1 model=cap_mim_m3_1 W=7.5 L=7.5 MF=1 spiceprefix=X}
 C {iopin.sym} 540 -920 3 0 {name=p1 lab=vdd}
-C {iopin.sym} 800 -920 3 0 {name=p2 lab=vdd}
-C {iopin.sym} 540 -340 1 0 {name=p3 lab=vss}
-C {iopin.sym} 800 -340 1 0 {name=p4 lab=vss}
 C {iopin.sym} 250 -340 1 0 {name=p5 lab=vss}
 C {ipin.sym} 500 -710 0 0 {name=p6 lab=vinp}
 C {ipin.sym} 840 -710 2 0 {name=p7 lab=vinn}
@@ -119,7 +118,6 @@ L=0.45
 model=res_xhigh_po_0p35
 spiceprefix=X
  mult=1}
-C {iopin.sym} 670 -680 3 0 {name=p11 lab=vss}
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} 540 -850 2 0 {name=R1
 W=0.35
 L=0.45
@@ -132,5 +130,9 @@ L=0.45
 model=res_xhigh_po_0p35
 spiceprefix=X
  mult=1}
-C {iopin.sym} 560 -850 0 0 {name=p12 lab=vss}
-C {iopin.sym} 820 -850 0 0 {name=p13 lab=vss}
+C {lab_wire.sym} 800 -340 3 0 {name=p4 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 540 -340 3 0 {name=p13 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 860 -850 2 0 {name=p14 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 600 -850 2 0 {name=p15 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 670 -680 1 0 {name=p11 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 800 -920 1 0 {name=p2 sig_type=std_logic lab=vdd}
