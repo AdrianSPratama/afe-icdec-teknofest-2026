@@ -4,18 +4,18 @@ K {}
 V {}
 S {}
 E {}
-N 540 -680 540 -430 {lab=#net1}
-N 800 -680 800 -430 {lab=#net2}
+N 540 -680 540 -430 {lab=vsm1}
+N 800 -680 800 -430 {lab=vsm2}
 N 540 -820 540 -740 {lab=outn}
 N 800 -820 800 -740 {lab=outp}
-N 540 -490 630 -490 {lab=#net1}
-N 690 -490 800 -490 {lab=#net2}
-N 700 -660 800 -660 {lab=#net2}
-N 540 -660 640 -660 {lab=#net1}
+N 540 -490 630 -490 {lab=vsm1}
+N 690 -490 800 -490 {lab=vsm2}
+N 700 -660 800 -660 {lab=vsm2}
+N 540 -660 640 -660 {lab=vsm1}
 N 540 -920 540 -880 {lab=vdd}
 N 800 -920 800 -880 {lab=vdd}
-N 540 -710 540 -680 {lab=#net1}
-N 800 -710 800 -680 {lab=#net2}
+N 540 -710 540 -680 {lab=vsm1}
+N 800 -710 800 -680 {lab=vsm2}
 N 800 -370 800 -340 {lab=vss}
 N 250 -370 250 -340 {lab=vss}
 N 290 -400 500 -400 {lab=in_cur}
@@ -136,3 +136,5 @@ C {lab_wire.sym} 860 -850 2 0 {name=p14 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 600 -850 2 0 {name=p15 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 670 -680 1 0 {name=p11 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 800 -920 1 0 {name=p2 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} 800 -620 0 0 {name=p3 sig_type=std_logic lab=vsm2}
+C {lab_wire.sym} 540 -620 0 0 {name=p12 sig_type=std_logic lab=vsm1}

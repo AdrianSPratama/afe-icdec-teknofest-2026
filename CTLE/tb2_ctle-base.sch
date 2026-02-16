@@ -15,13 +15,26 @@ C {vsource.sym} 750 -440 0 0 {name=VDD value=1.8 savecurrent=false}
 C {gnd.sym} 750 -410 0 0 {name=l3 lab=GND}
 C {vsource.sym} 980 -440 0 0 {name=V1 value="dc 0 ac 1" savecurrent=false}
 C {gnd.sym} 980 -410 0 0 {name=l4 lab=GND}
-C {sky130_fd_pr/corner.sym} 470 -680 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {code_shown.sym} 750 -840 0 0 {name=s1 only_toplevel=false value="
+C {sky130_fd_pr/corner.sym} 480 -760 0 0 {name=CORNER only_toplevel=true corner=tt}
+C {code_shown.sym} 790 -1120 0 0 {name=s1 only_toplevel=false value="
 .control
 save all
 
+alter @V1[DC] = 0.9+0.4
+alter @V2[DC] = 0.5
 op
 
+* Write .op simulation result to a file
+output op_results.txt
+write tb2_ctle-base_op.raw
+
+* Print all .op simulation results
+show all
+
+* 3. Switch output back to the screen (terminal)
+output terminal
+
+if 0
 alter @V1[DC] = 0.9
 alter @V2[DC] = 0.9
 alter @V1[AC] = 1.0
@@ -30,11 +43,13 @@ alter @V2[AC] = 0.0
 ac dec 10 1k 10G
 
 plot db(v(outp)-v(outn))
+write tb2_ctle-base_ac.raw
+end
 
 .endc"}
 C {vsource.sym} 1070 -440 0 0 {name=V2 value="dc 0 ac 0" savecurrent=false}
 C {gnd.sym} 1070 -410 0 0 {name=l5 lab=GND}
-C {devices/launcher.sym} 530 -760 0 0 {name=h15
+C {devices/launcher.sym} 540 -840 0 0 {name=h15
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
