@@ -4,116 +4,121 @@ K {}
 V {}
 S {}
 E {}
-L 4 470 -560 470 -110 {}
-L 4 470 -110 580 -110 {}
-L 4 470 -560 580 -560 {}
-L 4 580 -560 580 -110 {}
-L 4 80 -560 80 -110 {}
-L 4 80 -560 430 -560 {}
-L 4 430 -560 430 -110 {}
-L 4 80 -110 430 -110 {}
-L 4 610 -560 610 -110 {}
-L 4 610 -560 960 -560 {}
-L 4 610 -110 960 -110 {}
-L 4 960 -560 960 -110 {}
-L 4 450 -910 450 -770 {}
-L 4 450 -910 730 -910 {}
-L 4 450 -770 730 -770 {}
-L 4 730 -910 730 -770 {}
-T {BGR CORE} 200 -610 0 0 0.4 0.4 {}
+L 4 560 -530 560 -80 {}
+L 4 560 -80 670 -80 {}
+L 4 560 -530 670 -530 {}
+L 4 670 -530 670 -80 {}
+L 4 170 -530 170 -80 {}
+L 4 170 -530 520 -530 {}
+L 4 520 -530 520 -80 {}
+L 4 170 -80 520 -80 {}
+L 4 700 -530 700 -80 {}
+L 4 700 -530 1050 -530 {}
+L 4 700 -80 1050 -80 {}
+L 4 1050 -530 1050 -80 {}
+L 4 540 -880 540 -740 {}
+L 4 540 -880 820 -880 {}
+L 4 540 -740 820 -740 {}
+L 4 820 -880 820 -740 {}
+P 4 1 1020 -820 {}
+T {BGR CORE} 290 -580 0 0 0.4 0.4 {}
 T {CURVATURE
-CORRECTION} 460 -630 0 0 0.4 0.4 {}
+CORRECTION} 550 -600 0 0 0.4 0.4 {}
 T {STARTUP 
-CIRCUIT} 740 -630 0 0 0.4 0.4 {}
-T {RC Lowpass Filter} 500 -950 0 0 0.4 0.4 {}
-N 150 -530 370 -530 {lab=VDD}
-N 310 -500 330 -500 {lab=#net1}
-N 260 -500 260 -440 {lab=#net1}
-N 150 -470 150 -320 {lab=#net2}
-N 150 -530 150 -500 {lab=VDD}
-N 370 -530 370 -500 {lab=VDD}
-N 190 -200 220 -200 {lab=VSS}
-N 220 -200 220 -150 {lab=VSS}
-N 150 -170 150 -150 {lab=VSS}
-N 300 -150 370 -150 {lab=VSS}
-N 370 -170 370 -150 {lab=VSS}
-N 300 -200 330 -200 {lab=VSS}
-N 300 -200 300 -150 {lab=VSS}
-N 150 -250 150 -230 {lab=VBE1}
-N 150 -320 150 -310 {lab=#net2}
-N 280 -320 370 -320 {lab=VBE2}
-N 150 -320 240 -320 {lab=#net2}
-N 310 -360 320 -360 {lab=VDD}
-N 200 -360 210 -360 {lab=VSS}
-N 1310 -540 1310 -530 {lab=GND}
-N 60 -530 150 -530 {lab=VDD}
-N 60 -150 150 -150 {lab=VSS}
-N 370 -310 370 -230 {lab=VBE2}
-N 460 -500 490 -500 {lab=#net1}
-N 380 -510 390 -500 {lab=#net1}
-N 320 -510 380 -510 {lab=#net1}
-N 310 -500 320 -510 {lab=#net1}
-N 370 -530 530 -530 {lab=VDD}
-N 530 -330 530 -150 {lab=VSS}
-N 370 -150 530 -150 {lab=VSS}
-N 460 -500 460 -430 {lab=#net1}
-N 460 -430 660 -430 {lab=#net1}
-N 660 -430 660 -390 {lab=#net1}
-N 630 -360 660 -360 {lab=VSS}
-N 630 -360 630 -150 {lab=VSS}
-N 660 -330 660 -150 {lab=VSS}
-N 630 -150 660 -150 {lab=VSS}
-N 370 -310 710 -310 {lab=VBE2}
-N 710 -310 710 -260 {lab=VBE2}
-N 750 -230 750 -150 {lab=VSS}
-N 660 -150 750 -150 {lab=VSS}
-N 530 -530 530 -500 {lab=VDD}
-N 750 -530 750 -500 {lab=VDD}
-N 530 -530 750 -530 {lab=VDD}
-N 700 -360 750 -360 {lab=#net3}
-N 750 -360 750 -290 {lab=#net3}
-N 860 -500 890 -500 {lab=VSS}
-N 870 -530 930 -530 {lab=VDD}
-N 820 -530 820 -420 {lab=VDD}
-N 930 -460 930 -150 {lab=VSS}
-N 860 -150 930 -150 {lab=VSS}
-N 750 -260 770 -260 {lab=VSS}
-N 770 -260 770 -150 {lab=VSS}
-N 860 -460 860 -450 {lab=VSS}
-N 860 -420 870 -420 {lab=VDD}
-N 870 -530 870 -420 {lab=VDD}
-N 860 -460 930 -460 {lab=VSS}
-N 860 -390 860 -150 {lab=VSS}
-N 930 -530 930 -500 {lab=VDD}
-N 190 -500 260 -500 {lab=#net1}
-N 150 -150 220 -150 {lab=VSS}
-N 220 -150 300 -150 {lab=VSS}
-N 260 -500 310 -500 {lab=#net1}
-N 390 -500 460 -500 {lab=#net1}
-N 530 -150 630 -150 {lab=VSS}
-N 370 -320 370 -310 {lab=VBE2}
-N 750 -470 750 -360 {lab=#net3}
-N 750 -530 820 -530 {lab=VDD}
-N 750 -150 770 -150 {lab=VSS}
-N 790 -500 860 -500 {lab=VSS}
-N 820 -530 870 -530 {lab=VDD}
-N 860 -500 860 -460 {lab=VSS}
-N 930 -470 930 -460 {lab=VSS}
-N 770 -150 860 -150 {lab=VSS}
-N 530 -470 530 -460 {lab=#net4}
-N 530 -400 530 -390 {lab=#net4}
-N 370 -340 370 -320 {lab=VBE2}
-N 370 -470 370 -460 {lab=#net5}
-N 370 -460 370 -400 {lab=#net5}
-N 530 -460 530 -400 {lab=#net4}
-N 420 -860 490 -860 {lab=#net5}
-N 420 -670 420 -420 {lab=#net5}
-N 370 -420 420 -420 {lab=#net5}
-N 590 -860 660 -860 {lab=OUT}
-N 490 -860 530 -860 {lab=#net5}
-N 420 -860 420 -670 {lab=#net5}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 100 -160 1 1 {name=x1}
-C {sky130_fd_pr/pfet_01v8.sym} 350 -500 0 0 {name=M1
+CIRCUIT} 830 -600 0 0 0.4 0.4 {}
+T {RC Lowpass Filter} 590 -920 0 0 0.4 0.4 {}
+N 240 -500 460 -500 {lab=VDD}
+N 400 -470 420 -470 {lab=#net1}
+N 350 -470 350 -410 {lab=#net1}
+N 240 -440 240 -290 {lab=#net2}
+N 240 -500 240 -470 {lab=VDD}
+N 460 -500 460 -470 {lab=VDD}
+N 280 -170 310 -170 {lab=VSS}
+N 310 -170 310 -120 {lab=VSS}
+N 240 -140 240 -120 {lab=VSS}
+N 390 -120 460 -120 {lab=VSS}
+N 460 -140 460 -120 {lab=VSS}
+N 390 -170 420 -170 {lab=VSS}
+N 390 -170 390 -120 {lab=VSS}
+N 240 -220 240 -200 {lab=VBE1}
+N 240 -290 240 -280 {lab=#net2}
+N 370 -290 460 -290 {lab=#net3}
+N 240 -290 330 -290 {lab=#net2}
+N 400 -330 410 -330 {lab=VDD}
+N 290 -330 300 -330 {lab=VSS}
+N 1400 -510 1400 -500 {lab=GND}
+N 150 -500 240 -500 {lab=VDD}
+N 150 -120 240 -120 {lab=VSS}
+N 460 -280 460 -200 {lab=#net3}
+N 550 -470 580 -470 {lab=#net1}
+N 470 -480 480 -470 {lab=#net1}
+N 410 -480 470 -480 {lab=#net1}
+N 400 -470 410 -480 {lab=#net1}
+N 460 -500 620 -500 {lab=VDD}
+N 620 -300 620 -120 {lab=VSS}
+N 460 -120 620 -120 {lab=VSS}
+N 550 -470 550 -400 {lab=#net1}
+N 550 -400 750 -400 {lab=#net1}
+N 750 -400 750 -360 {lab=#net1}
+N 720 -330 750 -330 {lab=VSS}
+N 720 -330 720 -120 {lab=VSS}
+N 750 -300 750 -120 {lab=VSS}
+N 720 -120 750 -120 {lab=VSS}
+N 460 -280 800 -280 {lab=#net3}
+N 800 -280 800 -230 {lab=#net3}
+N 840 -200 840 -120 {lab=VSS}
+N 750 -120 840 -120 {lab=VSS}
+N 620 -500 620 -470 {lab=VDD}
+N 840 -500 840 -470 {lab=VDD}
+N 620 -500 840 -500 {lab=VDD}
+N 790 -330 840 -330 {lab=#net4}
+N 840 -330 840 -260 {lab=#net4}
+N 950 -470 980 -470 {lab=VSS}
+N 960 -500 1020 -500 {lab=VDD}
+N 910 -500 910 -390 {lab=VDD}
+N 950 -120 1020 -120 {lab=VSS}
+N 840 -230 860 -230 {lab=VSS}
+N 860 -230 860 -120 {lab=VSS}
+N 950 -430 950 -420 {lab=VSS}
+N 950 -390 960 -390 {lab=VDD}
+N 960 -500 960 -390 {lab=VDD}
+N 950 -430 1020 -430 {lab=VSS}
+N 1020 -500 1020 -470 {lab=VDD}
+N 280 -470 350 -470 {lab=#net1}
+N 240 -120 310 -120 {lab=VSS}
+N 310 -120 390 -120 {lab=VSS}
+N 350 -470 400 -470 {lab=#net1}
+N 480 -470 550 -470 {lab=#net1}
+N 620 -120 720 -120 {lab=VSS}
+N 460 -290 460 -280 {lab=#net3}
+N 840 -440 840 -330 {lab=#net4}
+N 840 -500 910 -500 {lab=VDD}
+N 840 -120 860 -120 {lab=VSS}
+N 880 -470 950 -470 {lab=VSS}
+N 910 -500 960 -500 {lab=VDD}
+N 950 -470 950 -430 {lab=VSS}
+N 1020 -440 1020 -430 {lab=VSS}
+N 860 -120 950 -120 {lab=VSS}
+N 620 -440 620 -430 {lab=#net5}
+N 620 -370 620 -360 {lab=#net5}
+N 460 -310 460 -290 {lab=#net3}
+N 460 -440 460 -430 {lab=OUT}
+N 460 -430 460 -370 {lab=OUT}
+N 620 -430 620 -370 {lab=#net5}
+N 510 -830 580 -830 {lab=OUT}
+N 580 -830 620 -830 {lab=OUT}
+N 510 -830 510 -640 {lab=OUT}
+N 460 -410 490 -410 {lab=OUT}
+N 510 -640 510 -410 {lab=OUT}
+N 490 -410 510 -410 {lab=OUT}
+N 950 -260 950 -120 {lab=VSS}
+N 950 -360 950 -320 {lab=VSS}
+N 1020 -430 1020 -320 {lab=VSS}
+N 1020 -260 1020 -120 {lab=VSS}
+N 950 -320 950 -260 {lab=VSS}
+N 1020 -320 1020 -260 {lab=VSS}
+C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 190 -130 1 1 {name=x1}
+C {sky130_fd_pr/pfet_01v8.sym} 440 -470 0 0 {name=M1
 W=20
 L=5
 nf=1
@@ -127,7 +132,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 170 -500 0 1 {name=M2
+C {sky130_fd_pr/pfet_01v8.sym} 260 -470 0 1 {name=M2
 W=20
 L=5
 nf=1
@@ -141,36 +146,36 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {res.sym} 370 -370 0 0 {name=R1
+C {res.sym} 460 -340 0 0 {name=R1
 value=980k
 footprint=1206
 device=resistor
 m=1}
-C {res.sym} 150 -280 0 0 {name=R2
+C {res.sym} 240 -250 0 0 {name=R2
 value=200.3k
 footprint=1206
 device=resistor
 m=1}
-C {sky130_fd_pr/pnp_05v5.sym} 350 -200 0 0 {name=Q1
+C {sky130_fd_pr/pnp_05v5.sym} 440 -170 0 0 {name=Q1
 model=pnp_05v5_W3p40L3p40
 m=1
 spiceprefix=X
 }
-C {sky130_fd_pr/pnp_05v5.sym} 170 -200 0 1 {name=Q2
+C {sky130_fd_pr/pnp_05v5.sym} 260 -170 0 1 {name=Q2
 model=pnp_05v5_W3p40L3p40
 m=64
 spiceprefix=X
 }
-C {lab_pin.sym} 320 -360 0 1 {name=p1 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} 200 -360 0 0 {name=p2 sig_type=std_logic lab=VSS}
-C {vsource.sym} 1090 -570 0 0 {name=V1 value="DC 1.8 AC 1" savecurrent=false}
-C {vsource.sym} 1310 -570 0 0 {name=V2 value="DC 0" savecurrent=false}
-C {lab_pin.sym} 1090 -540 0 0 {name=p7 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1310 -600 0 0 {name=p8 sig_type=std_logic lab=VSS}
-C {gnd.sym} 1310 -530 0 0 {name=l1 lab=GND}
-C {lab_pin.sym} 1090 -600 0 0 {name=p9 sig_type=std_logic lab=VDD}
-C {sky130_fd_pr/corner.sym} 1040 -420 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {code_shown.sym} 1190 -450 0 0 {name=s1 only_toplevel=false value="
+C {lab_pin.sym} 410 -330 0 1 {name=p1 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 290 -330 0 0 {name=p2 sig_type=std_logic lab=VSS}
+C {vsource.sym} 1180 -540 0 0 {name=V1 value="DC 1.8 AC 1m" savecurrent=false}
+C {vsource.sym} 1400 -540 0 0 {name=V2 value="DC 0" savecurrent=false}
+C {lab_pin.sym} 1180 -510 0 0 {name=p7 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 1400 -570 0 0 {name=p8 sig_type=std_logic lab=VSS}
+C {gnd.sym} 1400 -500 0 0 {name=l1 lab=GND}
+C {lab_pin.sym} 1180 -570 0 0 {name=p9 sig_type=std_logic lab=VDD}
+C {sky130_fd_pr/corner.sym} 1130 -390 0 0 {name=CORNER only_toplevel=true corner=tt}
+C {code_shown.sym} 1280 -420 0 0 {name=s1 only_toplevel=false value="
 
 .control
  ac dec 200 1 1e9
@@ -178,7 +183,7 @@ C {code_shown.sym} 1190 -450 0 0 {name=s1 only_toplevel=false value="
  plot VBE2 - VBE1
  plot VBE2 VBE1
  plot i(Vmeas)
- plot 20*log10(mag(v(vdd)/v(out)))
+ plot 20*log10((v(vdd)/v(out)))
 
  measure ac PSRR_10Hz  param=20*log10(mag(v(vdd)/v(out))) at=10
  measure ac PSRR_1k    param=20*log10(mag(v(vdd)/v(out))) at=1k
@@ -186,9 +191,9 @@ C {code_shown.sym} 1190 -450 0 0 {name=s1 only_toplevel=false value="
 
 .endc
 "}
-C {lab_pin.sym} 60 -530 0 0 {name=p3 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} 60 -150 0 0 {name=p4 sig_type=std_logic lab=VSS}
-C {sky130_fd_pr/pfet_01v8.sym} 510 -500 0 0 {name=M3
+C {lab_pin.sym} 150 -500 0 0 {name=p3 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 150 -120 0 0 {name=p4 sig_type=std_logic lab=VSS}
+C {sky130_fd_pr/pfet_01v8.sym} 600 -470 0 0 {name=M3
 W=20
 L=5
 nf=1
@@ -202,12 +207,12 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {res.sym} 530 -360 0 0 {name=R3
+C {res.sym} 620 -330 0 0 {name=R3
 value=50k
 footprint=1206
 device=resistor
 m=1}
-C {sky130_fd_pr/nfet_01v8.sym} 680 -360 0 1 {name=M4
+C {sky130_fd_pr/nfet_01v8.sym} 770 -330 0 1 {name=M4
 W=1
 L=0.15
 nf=1 
@@ -221,7 +226,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 730 -260 0 0 {name=M5
+C {sky130_fd_pr/nfet_01v8.sym} 820 -230 0 0 {name=M5
 W=1
 L=0.15
 nf=1 
@@ -235,7 +240,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 770 -500 0 1 {name=M6
+C {sky130_fd_pr/pfet_01v8.sym} 860 -470 0 1 {name=M6
 W=20
 L=5
 nf=1
@@ -249,7 +254,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 910 -500 0 0 {name=M7
+C {sky130_fd_pr/pfet_01v8.sym} 1000 -470 0 0 {name=M7
 W=20
 L=5
 nf=1
@@ -263,7 +268,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 840 -420 0 0 {name=M8
+C {sky130_fd_pr/pfet_01v8.sym} 930 -390 0 0 {name=M8
 W=5
 L=5
 nf=1
@@ -277,17 +282,5 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {lab_pin.sym} 660 -860 0 1 {name=p6 sig_type=std_logic lab=OUT}
-C {lab_pin.sym} 150 -240 0 1 {name=p11 sig_type=std_logic lab=VBE1}
-C {lab_pin.sym} 370 -250 0 1 {name=p12 sig_type=std_logic lab=VBE2}
-C {capa.sym} 630 -830 0 0 {name=C1
-m=1
-value=6p
-footprint=1206
-device="ceramic capacitor"}
-C {lab_pin.sym} 630 -800 0 0 {name=p5 sig_type=std_logic lab=VSS}
-C {res.sym} 560 -860 1 0 {name=R4
-value=1
-footprint=1206
-device=resistor
-m=1}
+C {lab_pin.sym} 240 -210 0 1 {name=p11 sig_type=std_logic lab=VBE1}
+C {lab_pin.sym} 510 -610 0 1 {name=p12 sig_type=std_logic lab=OUT}
