@@ -85,7 +85,7 @@ N 1060 -990 1060 -970 {lab=VDD}
 N 1330 -980 1330 -890 {lab=VDD}
 N 1330 -990 1330 -980 {lab=VDD}
 N 1510 -990 1510 -890 {lab=VDD}
-N 1100 -940 1630 -940 {lab=#net17}
+N 1100 -940 1630 -940 {lab=OUT}
 N 1510 -990 1670 -990 {lab=VDD}
 N 1160 -720 1160 -620 {lab=#net16}
 N 1160 -620 1510 -620 {lab=#net16}
@@ -100,8 +100,8 @@ N 560 -540 560 -530 {lab=VSS}
 N 540 -260 1490 -260 {lab=VSS}
 N 710 -540 710 -530 {lab=VSS}
 N 1670 -990 1670 -970 {lab=VDD}
-N 1570 -940 1570 -860 {lab=#net17}
-N 1570 -860 1670 -860 {lab=#net17}
+N 1570 -940 1570 -860 {lab=OUT}
+N 1570 -860 1670 -860 {lab=OUT}
 N 240 -990 380 -990 {lab=VDD}
 N 670 -850 1220 -850 {lab=#net3}
 N 1220 -850 1220 -760 {lab=#net3}
@@ -122,19 +122,17 @@ N 560 -530 560 -270 {lab=VSS}
 N 560 -270 560 -260 {lab=VSS}
 N 670 -960 690 -960 {lab=#net1}
 N 1490 -260 1510 -260 {lab=VSS}
-N 1670 -450 1670 -440 {lab=#net18}
-N 1670 -530 1670 -510 {lab=#net19}
-N 1670 -440 1670 -420 {lab=#net18}
-N 1670 -360 1670 -330 {lab=#net20}
-N 1690 -650 1690 -300 {lab=VSS}
-N 1670 -270 1670 -260 {lab=VSS}
 N 1510 -260 1670 -260 {lab=VSS}
-N 1670 -910 1670 -680 {lab=#net17}
-N 1670 -620 1670 -590 {lab=#net21}
 N 380 -420 380 -360 {lab=VSS}
 N 380 -590 380 -530 {lab=#net5}
 N 380 -680 380 -620 {lab=#net5}
 N 380 -330 380 -270 {lab=VSS}
+N 1670 -910 1670 -740 {lab=OUT}
+N 1510 -710 1630 -710 {lab=#net14}
+N 1670 -680 1670 -260 {lab=VSS}
+N 1540 -800 1540 -710 {lab=#net14}
+N 1540 -800 1570 -800 {lab=#net14}
+N 1630 -800 1670 -800 {lab=OUT}
 C {title.sym} 580 -100 0 0 {name=l1 author="Dzaki Andriansyah"}
 C {lab_pin.sym} 360 -480 0 0 {name=p1 sig_type=std_logic lab=VSS}
 C {sky130_fd_pr/res_high_po_1p41.sym} 380 -480 0 0 {name=R10
@@ -492,30 +490,20 @@ C {iopin.sym} 240 -990 0 1 {name=p3 sig_type=std_logic lab=VDD}
 C {ipin.sym} 920 -780 0 0 {name=p5 sig_type=std_logic lab=VP}
 C {ipin.sym} 1210 -780 0 1 {name=p6 sig_type=std_logic lab=VN
 L=3.25}
-C {opin.sym} 1410 -940 2 1 {name=p4 lab=OUT}
-C {lab_pin.sym} 1690 -480 0 1 {name=p7 sig_type=std_logic lab=VSS}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1670 -300 0 1 {name=R6
-L=200
-model=res_high_po_1p41
+C {opin.sym} 1670 -820 2 1 {name=p4 lab=OUT}
+C {sky130_fd_pr/nfet3_01v8_lvt.sym} 1650 -710 0 0 {name=M1
+W=2.5
+L=1.25
+nf=1
+mult=1
+body=GND
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8_lvt
 spiceprefix=X
-mult=1}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1670 -390 0 1 {name=R1
-L=200
-model=res_high_po_1p41
-spiceprefix=X
-mult=1}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1670 -480 0 1 {name=R2
-L=200
-model=res_high_po_1p41
-spiceprefix=X
-mult=1}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1670 -560 0 1 {name=R3
-L=200
-model=res_high_po_1p41
-spiceprefix=X
-mult=1}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1670 -650 0 1 {name=R4
-L=200
-model=res_high_po_1p41
-spiceprefix=X
-mult=1}
+}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 1600 -800 1 0 {name=C1 model=cap_mim_m3_1 W=25 L=25 MF=2 spiceprefix=X}

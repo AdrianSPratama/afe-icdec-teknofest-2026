@@ -1,0 +1,22 @@
+** sch_path: /foss/designs/afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sch
+.subckt bgr-opamp VDD OUT VP VN VSS
+*.PININFO VSS:B VDD:B VP:I VN:I OUT:O
+XM1 net1 VP net3 VSS sky130_fd_pr__nfet_01v8 L=0.3 W=2.5 nf=2 m=1
+XM2 net2 VN net3 VSS sky130_fd_pr__nfet_01v8 L=0.3 W=2.5 nf=2 m=1
+XM4 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=1.25 W=10.8 nf=4 m=1
+XM3 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=1.25 W=10.8 nf=4 m=1
+XM5 net3 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=1.25 W=3.4 nf=1 m=1
+XM9 net4 net6 net5 net5 sky130_fd_pr__nfet_01v8 L=1.25 W=3.4 nf=1 m=1
+XM8 net4 net4 VDD VDD sky130_fd_pr__pfet_01v8 L=1.25 W=10.8 nf=4 m=1
+XM11 net6 net4 VDD VDD sky130_fd_pr__pfet_01v8 L=1.25 W=10.8 nf=4 m=1
+XM10 net6 net6 VSS VSS sky130_fd_pr__nfet_01v8 L=1.25 W=3.4 nf=1 m=1
+XM6 OUT net2 VDD VDD sky130_fd_pr__pfet_01v8 L=1.25 W=110 nf=32 m=1
+XM7 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=1.25 W=12 nf=4 m=1
+XC2 OUT net2 sky130_fd_pr__cap_mim_m3_1 W=15 L=15 m=4
+XM12 net4 net4 net6 net6 sky130_fd_pr__nfet_01v8 L=0.15 W=0.85 nf=1 m=1
+XR2 net7 net5 VSS sky130_fd_pr__res_high_po_1p41 L=3.235 mult=1 m=1
+XR3 net9 net7 VSS sky130_fd_pr__res_high_po_1p41 L=3.235 mult=1 m=1
+XR4 net8 net9 VSS sky130_fd_pr__res_high_po_1p41 L=3.235 mult=1 m=1
+XR5 net10 net8 VSS sky130_fd_pr__res_high_po_1p41 L=3.235 mult=1 m=1
+XR6 VSS net10 VSS sky130_fd_pr__res_high_po_1p41 L=3.235 mult=1 m=1
+.ends
