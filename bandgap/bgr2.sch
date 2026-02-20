@@ -186,9 +186,11 @@ C {code_shown.sym} 1380 -950 0 0 {name=s1 only_toplevel=false value="
  let CTAT = VBE1
  let VREF = PTAT + CTAT + CC
  let Verr = VREF - OUT
+ let pwr = -i(V1)*1.8
  Bcorr VREF_CORR 0 V = V(VREF_RAW) - (1.26596064e-2 + (-5.94362766e-7)*(temp-27) + (-5.24694018e-7)*pwr(temp-27,2) + (2.27088537e-9)*pwr(temp-27,3))
  plot V(VREF_CORR)
  plot i(Vmeas)
+ plot pwr
  plot OUT PTAT CTAT
  plot VREF
  plot VERR
