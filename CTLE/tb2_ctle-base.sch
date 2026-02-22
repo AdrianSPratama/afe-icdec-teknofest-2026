@@ -16,7 +16,7 @@ C {gnd.sym} 750 -410 0 0 {name=l3 lab=GND}
 C {vsource.sym} 980 -440 0 0 {name=V1 value="dc 0 ac 1" savecurrent=false}
 C {gnd.sym} 980 -410 0 0 {name=l4 lab=GND}
 C {sky130_fd_pr/corner.sym} 480 -760 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {code_shown.sym} 790 -1120 0 0 {name=s1 only_toplevel=false value="
+C {code_shown.sym} 780 -1350 0 0 {name=s1 only_toplevel=false value="
 .control
 save all
 
@@ -34,17 +34,27 @@ show all
 * 3. Switch output back to the screen (terminal)
 output terminal
 
-if 0
 alter @V1[DC] = 0.9
 alter @V2[DC] = 0.9
-alter @V1[AC] = 1.0
-alter @V2[AC] = 0.0
+alter @V1[AC] = 0.4
+alter @V2[AC] = -0.4
 
 ac dec 10 1k 10G
 
 plot db(v(outp)-v(outn))
+
+* 1. Pre-calculate the differential dB gain vector
+  let v_diff_db = db(v(outp) - v(outn))
+  
+  * 2. Measure using the pre-calculated vector
+  * Use lowercase 'at' and avoid extra spaces in the vector name
+  meas ac gain_low find v_diff_db at=10meg
+  meas ac gain_4g  find v_diff_db at=4g
+  
+  let peaking = gain_4g - gain_low
+  print gain_low gain_4g peaking
+
 write tb2_ctle-base_ac.raw
-end
 
 .endc"}
 C {vsource.sym} 1070 -440 0 0 {name=V2 value="dc 0 ac 0" savecurrent=false}
