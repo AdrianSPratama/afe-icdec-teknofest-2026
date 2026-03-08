@@ -62,18 +62,14 @@ N 410 -590 410 -490 {lab=#net1}
 N 410 -490 470 -490 {lab=#net1}
 N 720 -590 720 -490 {lab=#net2}
 N 650 -490 720 -490 {lab=#net2}
-N 450 -620 500 -620 {lab=ctrl}
-N 500 -620 500 -560 {lab=ctrl}
-N 450 -560 490 -560 {lab=ctrl}
-N 640 -620 680 -620 {lab=ctrl}
-N 630 -620 630 -560 {lab=ctrl}
-N 640 -560 680 -560 {lab=ctrl}
 N 500 -590 630 -590 {lab=ctrl}
 N 410 -710 540 -710 {lab=#net1}
 N 600 -710 720 -710 {lab=#net2}
-N 630 -620 640 -620 {lab=ctrl}
-N 630 -560 640 -560 {lab=ctrl}
-N 490 -560 500 -560 {lab=ctrl}
+N 490 -590 500 -590 {lab=ctrl}
+N 410 -590 430 -590 {lab=#net1}
+N 630 -590 640 -590 {lab=ctrl}
+N 710 -590 720 -590 {lab=#net2}
+N 700 -590 710 -590 {lab=#net2}
 C {title.sym} 160 -30 0 0 {name=l1 author="Adrian Sami Pratama"}
 C {opin.sym} 470 -870 0 0 {name=p5 lab=outp}
 C {opin.sym} 650 -870 0 1 {name=p6 lab=outn}
@@ -200,45 +196,27 @@ sa=0 sb=0 sd=0
 model=nfet_01v8_lvt
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8_lvt.sym} 430 -590 2 1 {name=M7
-W=1
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8_lvt
-spiceprefix=X
-}
-C {sky130_fd_pr/nfet_01v8_lvt.sym} 700 -590 2 0 {name=M8
-W=1
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8_lvt
-spiceprefix=X
-}
 C {sky130_fd_pr/corner.sym} 950 -1060 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {code_shown.sym} 1250 -1070 0 0 {name=simulation_code only_toplevel=false value="
 .control
 
 * Sweep Vctrl and measure imaginary current
-dc Vcon 0 1.8 0.05
+dc Vcon -1 1.8 0.05
 
-plot @m.xm7.msky130_fd_pr__nfet_01v8_lvt[cgg]
-plot @m.xm8.msky130_fd_pr__nfet_01v8_lvt[cgg]
+plot @c.xc1.sky130_fd_pr__cap_var_lvt[c]
+
+if 0
+* 1. Create a new vector (this is where you name it)
+
+  let C_M7_fF = @m.xm7.msky130_fd_pr__nfet_01v8_lvt[cgg] * 1e15
+  let C_M8_fF = @m.xm8.msky130_fd_pr__nfet_01v8_lvt[cgg] * 1e15
+  
+  * 2. Now plot the vectors by their new names
+  plot C_M7_fF C_M8_fF
+  plot @m.xm8.msky130_fd_pr__nfet_01v8_lvt[vgs]
 
 plot @m.xm7.msky130_fd_pr__nfet_01v8_lvt[id]
+end
 
 .endc
 "}
@@ -247,7 +225,7 @@ C {vdd.sym} 930 -610 0 0 {name=l2 lab=VDD}
 C {gnd.sym} 930 -550 0 0 {name=l4 lab=GND}
 C {vsource.sym} 1030 -580 0 0 {name=Vinp value=1.3 savecurrent=false}
 C {vsource.sym} 1110 -580 0 0 {name=Vinn value=0.5 savecurrent=false}
-C {vsource.sym} 1190 -580 0 0 {name=Vcon value=0.9 savecurrent=false}
+C {vsource.sym} 1190 -580 0 0 {name=Vcon value=1.8 savecurrent=false}
 C {lab_wire.sym} 1030 -610 0 0 {name=p2 sig_type=std_logic lab=inp}
 C {lab_wire.sym} 1110 -610 0 0 {name=p3 sig_type=std_logic lab=inn}
 C {lab_wire.sym} 1190 -610 0 0 {name=p7 sig_type=std_logic lab=ctrl}
@@ -265,7 +243,9 @@ C {lab_wire.sym} 720 -820 0 1 {name=p10 sig_type=std_logic lab=inn}
 C {lab_pin.sym} 570 -710 3 0 {name=p11 sig_type=std_logic lab=GND
 }
 C {lab_wire.sym} 570 -590 0 0 {name=p14 sig_type=std_logic lab=ctrl}
-C {lab_pin.sym} 450 -590 2 0 {name=p17 sig_type=std_logic lab=GND
+C {lab_pin.sym} 440 -630 1 0 {name=p17 sig_type=std_logic lab=GND
 }
-C {lab_pin.sym} 680 -590 0 0 {name=p18 sig_type=std_logic lab=GND
+C {sky130_fd_pr/cap_var_lvt.sym} 460 -590 1 0 {name=C3 model=cap_var_lvt W=0.5 L=0.5 VM=1 spiceprefix=X}
+C {lab_pin.sym} 690 -630 1 0 {name=p18 sig_type=std_logic lab=GND
 }
+C {sky130_fd_pr/cap_var_lvt.sym} 670 -590 3 1 {name=C1 model=cap_var_lvt W=0.5 L=0.5 VM=1 spiceprefix=X}
