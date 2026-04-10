@@ -4,12 +4,12 @@ K {}
 V {}
 S {}
 E {}
-N 470 -790 470 -750 {lab=vrplus}
-N 470 -490 470 -250 {lab=vrplus}
-N 470 -360 540 -360 {lab=vrplus}
-N 650 -790 650 -750 {lab=vrmin}
-N 650 -490 650 -250 {lab=vrmin}
-N 600 -360 650 -360 {lab=vrmin}
+N 470 -790 470 -750 {lab=#net1}
+N 470 -490 470 -250 {lab=#net1}
+N 470 -360 540 -360 {lab=#net1}
+N 650 -790 650 -750 {lab=#net2}
+N 650 -490 650 -250 {lab=#net2}
+N 600 -360 650 -360 {lab=#net2}
 N 470 -890 470 -850 {lab=outp}
 N 650 -890 650 -850 {lab=outn}
 N 470 -990 470 -950 {lab=VDD}
@@ -54,24 +54,22 @@ N 470 -1080 650 -1080 {lab=VDD}
 N 370 -220 370 -120 {lab=bias}
 N 370 -120 570 -120 {lab=bias}
 N 570 -220 570 -120 {lab=bias}
-N 410 -750 470 -750 {lab=vrplus}
-N 410 -750 410 -590 {lab=vrplus}
-N 650 -750 720 -750 {lab=vrmin}
-N 720 -750 720 -590 {lab=vrmin}
-N 410 -590 410 -490 {lab=vrplus}
-N 410 -490 470 -490 {lab=vrplus}
-N 720 -590 720 -490 {lab=vrmin}
-N 650 -490 720 -490 {lab=vrmin}
-N 410 -710 540 -710 {lab=vrplus}
-N 490 -590 500 -590 {lab=#net1}
-N 410 -590 430 -590 {lab=vrplus}
+N 410 -750 470 -750 {lab=#net1}
+N 410 -750 410 -590 {lab=#net1}
+N 650 -750 720 -750 {lab=#net2}
+N 720 -750 720 -590 {lab=#net2}
+N 410 -590 410 -490 {lab=#net1}
+N 410 -490 470 -490 {lab=#net1}
+N 720 -590 720 -490 {lab=#net2}
+N 650 -490 720 -490 {lab=#net2}
+N 500 -590 630 -590 {lab=ctrl}
+N 410 -710 540 -710 {lab=#net1}
+N 600 -710 720 -710 {lab=#net2}
+N 490 -590 500 -590 {lab=ctrl}
+N 410 -590 430 -590 {lab=#net1}
 N 630 -590 640 -590 {lab=ctrl}
-N 710 -590 720 -590 {lab=vrmin}
-N 700 -590 710 -590 {lab=vrmin}
-N 690 -710 720 -710 {lab=vrmin}
-N 600 -710 630 -710 {lab=#net2}
-N 560 -590 590 -590 {lab=ctrl}
-N 590 -590 630 -590 {lab=ctrl}
+N 710 -590 720 -590 {lab=#net2}
+N 700 -590 710 -590 {lab=#net2}
 C {title.sym} 160 -30 0 0 {name=l1 author="Adrian Sami Pratama"}
 C {opin.sym} 470 -870 0 0 {name=p5 lab=outp}
 C {opin.sym} 650 -870 0 1 {name=p6 lab=outn}
@@ -201,12 +199,25 @@ spiceprefix=X
 C {sky130_fd_pr/corner.sym} 950 -1060 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {code_shown.sym} 1250 -1070 0 0 {name=simulation_code only_toplevel=false value="
 .control
-save all
+
 * Sweep Vctrl and measure imaginary current
-dc Vcon 0 1.8 0.05
-let rs = ((v(vrplus)-v(vrmin))/i(vmeas))
-plot rs
-plot i(icap)
+dc Vcon -1 1.8 0.05
+
+plot @c.xc1.sky130_fd_pr__cap_var_lvt[c]
+
+if 0
+* 1. Create a new vector (this is where you name it)
+
+  let C_M7_fF = @m.xm7.msky130_fd_pr__nfet_01v8_lvt[cgg] * 1e15
+  let C_M8_fF = @m.xm8.msky130_fd_pr__nfet_01v8_lvt[cgg] * 1e15
+  
+  * 2. Now plot the vectors by their new names
+  plot C_M7_fF C_M8_fF
+  plot @m.xm8.msky130_fd_pr__nfet_01v8_lvt[vgs]
+
+plot @m.xm7.msky130_fd_pr__nfet_01v8_lvt[id]
+end
+
 .endc
 "}
 C {vsource.sym} 930 -580 0 0 {name=V1 value=1.8 savecurrent=false}
@@ -231,14 +242,10 @@ C {lab_wire.sym} 400 -820 0 0 {name=p9 sig_type=std_logic lab=inp}
 C {lab_wire.sym} 720 -820 0 1 {name=p10 sig_type=std_logic lab=inn}
 C {lab_pin.sym} 570 -710 3 0 {name=p11 sig_type=std_logic lab=GND
 }
-C {lab_wire.sym} 590 -590 0 0 {name=p14 sig_type=std_logic lab=ctrl}
+C {lab_wire.sym} 570 -590 0 0 {name=p14 sig_type=std_logic lab=ctrl}
 C {lab_pin.sym} 440 -630 1 0 {name=p17 sig_type=std_logic lab=GND
 }
 C {sky130_fd_pr/cap_var_lvt.sym} 460 -590 1 0 {name=C3 model=cap_var_lvt W=0.5 L=0.5 VM=1 spiceprefix=X}
 C {lab_pin.sym} 690 -630 1 0 {name=p18 sig_type=std_logic lab=GND
 }
 C {sky130_fd_pr/cap_var_lvt.sym} 670 -590 3 1 {name=C1 model=cap_var_lvt W=0.5 L=0.5 VM=1 spiceprefix=X}
-C {lab_wire.sym} 410 -710 0 0 {name=p21 sig_type=std_logic lab=vrplus}
-C {lab_wire.sym} 720 -710 0 1 {name=p19 sig_type=std_logic lab=vrmin}
-C {vsource.sym} 530 -590 1 0 {name=icap value=0 savecurrent=true}
-C {ammeter.sym} 660 -710 3 0 {name=Vmeas savecurrent=true spice_ignore=0}
