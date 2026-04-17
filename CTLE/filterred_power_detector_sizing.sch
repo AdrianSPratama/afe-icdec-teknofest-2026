@@ -53,17 +53,17 @@ divy=5
 autoload=0
 subdivx=1
 sim_type=tran}
-P 4 5 560 140 560 670 1260 670 1260 140 560 140 {}
+P 4 5 460 220 460 580 1160 580 1160 220 460 220 {}
 T {Load sky 130 spice models
 Faster version than above by
 presenting only the selected
-corner to the  simulator.} 890 330 0 0 0.4 0.4 {}
+corner to the  simulator.} 740 260 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
 currents) into the 
-schematic.} 890 460 0 0 0.4 0.4 {}
+schematic.} 740 370 0 0 0.4 0.4 {}
 T {read raw file and load
-waves into Xschem graphs} 890 590 0 0 0.4 0.4 {}
+waves into Xschem graphs} 740 480 0 0 0.4 0.4 {}
 N -330 -20 -330 0 {lab=Vout_pos}
 N -240 -50 -240 -20 {lab=Vout_pos}
 N -150 -20 -150 0 {lab=Vout_pos}
@@ -79,7 +79,6 @@ N 90 80 170 80 {lab=source}
 N -240 130 90 130 {lab=source}
 N -240 80 -240 130 {lab=source}
 N 90 80 90 130 {lab=source}
-N -80 250 -80 260 {lab=GND}
 N -390 30 -370 30 {lab=Vhf_pos}
 N -110 30 -110 100 {lab=Vhf_neg}
 N -390 100 -110 100 {lab=Vhf_neg}
@@ -126,7 +125,6 @@ N 120 220 120 280 {lab=Vlf_pos}
 N -540 370 -540 500 {lab=Vin_pos}
 N -460 500 -190 500 {lab=Vin_pos}
 N -250 370 -250 540 {lab=Vin_neg}
-N -320 540 -190 540 {lab=Vin_neg}
 N 120 370 120 500 {lab=Vin_pos}
 N -190 500 120 500 {lab=Vin_pos}
 N -190 540 270 540 {lab=Vin_neg}
@@ -157,8 +155,9 @@ N -460 320 -430 320 {lab=GND}
 N -390 390 -390 400 {lab=#net2}
 N 140 340 250 340 {lab=GND}
 N 200 340 200 360 {lab=GND}
-N -80 210 -80 250 {lab=GND}
 N -80 130 -80 150 {lab=source}
+N -80 150 -80 160 {lab=source}
+N -250 540 -190 540 {lab=Vin_neg}
 C {vsource.sym} 240 -100 0 0 {name=V1 value=1.8 savecurrent=false}
 C {gnd.sym} 240 -70 0 0 {name=l1 lab=GND}
 C {scripts/sky130_models.tcl} -230 -240 0 0 {}
@@ -218,8 +217,6 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {isource.sym} 70 170 0 0 {name=I0 value=160u}
-C {gnd.sym} -80 260 0 0 {name=l2 lab=GND}
 C {lab_pin.sym} -390 30 0 0 {name=p2 sig_type=std_logic lab=Vhf_pos
 }
 C {lab_pin.sym} -390 100 0 0 {name=p4 sig_type=std_logic lab=Vhf_neg
@@ -232,7 +229,7 @@ C {lab_pin.sym} 280 30 0 1 {name=p6 sig_type=std_logic lab=Vlf_neg
 }
 C {simulator_commands.sym} 460 -30 0 0 {name=COMMANDS
 simulator=ngspice
-only_toplevel=false 
+only_toplevel=true 
 value="
 .ac dec 100 1K 10Gig
 .save all
@@ -247,18 +244,18 @@ plot db(vhf)
 plot db(vlf)
 .endc
 "}
-C {devices/launcher.sym} 590 510 0 0 {name=h15
+C {devices/launcher.sym} 590 400 0 0 {name=h15
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {sky130_fd_pr/corner.sym} 700 320 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {devices/launcher.sym} 590 640 0 0 {name=h16 
+C {sky130_fd_pr/corner.sym} 510 250 0 0 {name=CORNER only_toplevel=true corner=tt}
+C {devices/launcher.sym} 590 560 0 0 {name=h16 
 descr="Load custom waves" 
 tclcommand="
 xschem raw_read $netlist_dir/filename.raw tran
 "
 }
-C {devices/launcher.sym} 590 600 0 0 {name=h17 
+C {devices/launcher.sym} 590 500 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
@@ -339,17 +336,4 @@ L=796.338
 model=res_high_po_5p73
 spiceprefix=X
 mult=4}
-C {sky130_fd_pr/nfet_01v8.sym} -100 180 0 0 {name=M5
-W=1.23
-L=0.45
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
+C {ipin.sym} -80 160 3 0 {name=p11 lab=isource_160u}
