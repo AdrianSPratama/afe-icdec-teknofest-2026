@@ -53,7 +53,7 @@ divy=5
 autoload=0
 subdivx=1
 sim_type=tran}
-P 4 5 510 140 510 670 1210 670 1210 140 510 140 {}
+P 4 5 560 140 560 670 1260 670 1260 140 560 140 {}
 T {Load sky 130 spice models
 Faster version than above by
 presenting only the selected
@@ -79,7 +79,7 @@ N 90 80 170 80 {lab=source}
 N -240 130 90 130 {lab=source}
 N -240 80 -240 130 {lab=source}
 N 90 80 90 130 {lab=source}
-N -80 190 -80 200 {lab=GND}
+N -80 250 -80 260 {lab=GND}
 N -390 30 -370 30 {lab=Vhf_pos}
 N -110 30 -110 100 {lab=Vhf_neg}
 N -390 100 -110 100 {lab=Vhf_neg}
@@ -106,27 +106,26 @@ N -240 -60 -240 -50 {lab=Vout_pos}
 N 80 -60 80 -50 {lab=Vout_neg}
 N -240 -50 -120 -50 {lab=Vout_pos}
 N -40 -50 -20 -50 {lab=Vout_neg}
-N -460 230 -460 280 {lab=Vhf_pos}
-N -320 230 -320 280 {lab=Vhf_neg}
+N -540 230 -540 280 {lab=Vhf_pos}
+N -250 230 -250 280 {lab=Vhf_neg}
 N -400 280 -380 280 {lab=#net2}
 N -400 370 -380 370 {lab=#net3}
 N -390 280 -390 350 {lab=#net2}
 N -390 360 -390 390 {lab=#net2}
-N -320 280 -320 290 {lab=Vhf_neg}
-N -320 360 -320 370 {lab=Vin_neg}
-N -320 290 -320 300 {lab=Vhf_neg}
+N -250 280 -250 290 {lab=Vhf_neg}
+N -250 360 -250 370 {lab=Vin_neg}
+N -250 290 -250 300 {lab=Vhf_neg}
 N -390 350 -390 360 {lab=#net2}
-N -460 360 -460 370 {lab=Vin_pos}
-N -460 280 -460 300 {lab=Vhf_pos}
-N -390 450 -390 460 {lab=GND}
+N -540 280 -540 300 {lab=Vhf_pos}
+N -390 460 -390 470 {lab=GND}
 N 120 280 120 310 {lab=Vlf_pos}
 N 180 280 210 280 {lab=#net4}
 N 270 280 270 310 {lab=Vlf_neg}
 N 270 220 270 280 {lab=Vlf_neg}
 N 120 220 120 280 {lab=Vlf_pos}
-N -460 370 -460 500 {lab=Vin_pos}
+N -540 370 -540 500 {lab=Vin_pos}
 N -460 500 -190 500 {lab=Vin_pos}
-N -320 370 -320 540 {lab=Vin_neg}
+N -250 370 -250 540 {lab=Vin_neg}
 N -320 540 -190 540 {lab=Vin_neg}
 N 120 370 120 500 {lab=Vin_pos}
 N -190 500 120 500 {lab=Vin_pos}
@@ -140,19 +139,29 @@ N -100 830 -70 830 {lab=Vin_neg}
 N -100 690 -60 690 {lab=Vin_pos}
 N -100 750 -100 760 {lab=GND}
 N 10 760 90 760 {lab=GND}
+N -540 500 -460 500 {lab=Vin_pos}
+N -540 360 -540 370 {lab=Vin_pos}
+N -540 370 -490 370 {lab=Vin_pos}
+N -430 370 -400 370 {lab=#net3}
+N -290 370 -250 370 {lab=Vin_neg}
+N -380 370 -350 370 {lab=#net3}
+N -540 280 -510 280 {lab=Vhf_pos}
+N -380 280 -350 280 {lab=#net2}
+N -290 280 -250 280 {lab=Vhf_neg}
+N -430 280 -400 280 {lab=#net2}
+N -510 280 -490 280 {lab=Vhf_pos}
+N -460 300 -460 350 {lab=GND}
+N -320 300 -320 350 {lab=GND}
+N -320 320 -300 320 {lab=GND}
+N -460 320 -430 320 {lab=GND}
+N -390 390 -390 400 {lab=#net2}
+N 140 340 250 340 {lab=GND}
+N 200 340 200 360 {lab=GND}
+N -80 210 -80 250 {lab=GND}
+N -80 130 -80 150 {lab=source}
 C {vsource.sym} 240 -100 0 0 {name=V1 value=1.8 savecurrent=false}
 C {gnd.sym} 240 -70 0 0 {name=l1 lab=GND}
 C {scripts/sky130_models.tcl} -230 -240 0 0 {}
-C {res.sym} -240 -90 0 0 {name=R1
-value=11250
-footprint=1206
-device=resistor
-m=1}
-C {res.sym} 80 -90 0 0 {name=R2
-value=11250
-footprint=1206
-device=resistor
-m=1}
 C {sky130_fd_pr/nfet_01v8.sym} -350 30 0 0 {name=M1
 W=1.23
 L=0.45
@@ -209,8 +218,8 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {isource.sym} -80 160 0 0 {name=I0 value=160u}
-C {gnd.sym} -80 200 0 0 {name=l2 lab=GND}
+C {isource.sym} 70 170 0 0 {name=I0 value=160u}
+C {gnd.sym} -80 260 0 0 {name=l2 lab=GND}
 C {lab_pin.sym} -390 30 0 0 {name=p2 sig_type=std_logic lab=Vhf_pos
 }
 C {lab_pin.sym} -390 100 0 0 {name=p4 sig_type=std_logic lab=Vhf_neg
@@ -220,15 +229,6 @@ C {lab_pin.sym} 280 -30 0 1 {name=p5 sig_type=std_logic lab=Vlf_pos
 }
 C {lab_pin.sym} 280 30 0 1 {name=p6 sig_type=std_logic lab=Vlf_neg
 
-}
-C {capa.sym} -70 -50 3 0 {name=C1
-m=1
-value=0.253f
-footprint=1206
-device="ceramic capacitor"}
-C {lab_pin.sym} -120 -60 1 0 {name=p10 sig_type=std_logic lab=Vout_pos
-}
-C {lab_pin.sym} -20 -60 1 0 {name=p11 sig_type=std_logic lab=Vout_neg
 }
 C {simulator_commands.sym} 460 -30 0 0 {name=COMMANDS
 simulator=ngspice
@@ -251,7 +251,7 @@ C {devices/launcher.sym} 590 510 0 0 {name=h15
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {sky130_fd_pr/corner.sym} 550 330 0 0 {name=CORNER only_toplevel=true corner=tt}
+C {sky130_fd_pr/corner.sym} 700 320 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/launcher.sym} 590 640 0 0 {name=h16 
 descr="Load custom waves" 
 tclcommand="
@@ -265,9 +265,9 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 "
 }
 C {lab_pin.sym} -80 130 1 0 {name=p1 sig_type=std_logic lab=source}
-C {lab_pin.sym} -460 230 1 0 {name=p3 sig_type=std_logic lab=Vhf_pos
+C {lab_pin.sym} -540 230 1 0 {name=p3 sig_type=std_logic lab=Vhf_pos
 }
-C {lab_pin.sym} -320 230 1 0 {name=p7 sig_type=std_logic lab=Vhf_neg
+C {lab_pin.sym} -250 230 1 0 {name=p7 sig_type=std_logic lab=Vhf_neg
 
 }
 C {lab_pin.sym} 120 220 3 1 {name=p8 sig_type=std_logic lab=Vlf_pos
@@ -275,66 +275,7 @@ C {lab_pin.sym} 120 220 3 1 {name=p8 sig_type=std_logic lab=Vlf_pos
 C {lab_pin.sym} 270 220 3 1 {name=p9 sig_type=std_logic lab=Vlf_neg
 
 }
-C {res.sym} -430 280 3 0 {name=R3
-value=1000
-footprint=1206
-device=resistor
-m=1}
-C {res.sym} -350 280 3 0 {name=R4
-value=1000
-footprint=1206
-device=resistor
-m=1}
-C {res.sym} -430 370 3 1 {name=R5
-value=10000
-footprint=1206
-device=resistor
-m=1}
-C {res.sym} -350 370 3 0 {name=R6
-value=10000
-footprint=1206
-device=resistor
-m=1}
-C {capa.sym} -390 420 0 0 {name=C2
-m=1
-value=0.674f
-footprint=1206
-device="ceramic capacitor"}
-C {capa.sym} -320 330 0 0 {name=C3
-m=1
-value=71.5f
-footprint=1206
-device="ceramic capacitor"}
-C {capa.sym} -460 330 0 0 {name=C4
-m=1
-value=71.5f
-footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} -390 460 0 0 {name=l3 lab=GND}
-C {capa.sym} 150 280 3 0 {name=C5
-m=1
-value=71.5f
-footprint=1206
-device="ceramic capacitor"}
-C {capa.sym} 240 280 3 0 {name=C6
-m=1
-value=71.5f
-footprint=1206
-device="ceramic capacitor"}
-C {res.sym} 120 340 0 0 {name=R7
-value=1000
-footprint=1206
-device=resistor
-m=1}
-C {res.sym} 270 340 0 0 {name=R8
-value=1000
-footprint=1206
-device=resistor
-m=1}
-C {lab_pin.sym} -140 580 3 0 {name=p12 sig_type=std_logic lab=Vin_pos
-}
-C {lab_pin.sym} -60 580 3 0 {name=p13 sig_type=std_logic lab=Vin_neg
-}
+C {gnd.sym} -390 470 0 0 {name=l3 lab=GND}
 C {vsource.sym} -100 720 0 0 {name=VIN_POS value="dc 1 ac 1 SIN(0.9 200m 2G)" savecurrent=false
 }
 C {vsource.sym} -100 800 2 0 {name=VIN_NEG value="dc 0.9 ac -1 sin(0.9 -200m 2G)" savecurrent=false}
@@ -344,4 +285,71 @@ C {lab_pin.sym} -70 830 0 1 {name=p14 sig_type=std_logic lab=Vin_neg
 }
 C {lab_pin.sym} -60 690 0 1 {name=p15 sig_type=std_logic lab=Vin_pos
 
+}
+C {ipin.sym} -140 580 3 0 {name=p16 lab=Vin_pos}
+C {ipin.sym} -60 580 3 0 {name=p17 lab=Vin_neg}
+C {opin.sym} -120 -60 3 0 {name=p12 lab=Vout_pos}
+C {opin.sym} -20 -60 3 0 {name=p10 lab=Vout_neg}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -250 330 0 0 {name=C7 model=cap_mim_m3_1 W=5.7921 L=5.7921 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -540 330 0 0 {name=C3 model=cap_mim_m3_1 W=5.7921 L=5.7921 MF=1 spiceprefix=X}
+C {sky130_fd_pr/res_high_po_5p73.sym} -320 280 3 0 {name=R9
+L=69.65
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {sky130_fd_pr/res_high_po_5p73.sym} -460 280 3 0 {name=R3
+L=69.65
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {sky130_fd_pr/res_high_po_5p73.sym} -320 370 1 0 {name=R4
+L=708
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {sky130_fd_pr/res_high_po_5p73.sym} -460 370 1 0 {name=R5
+L=708
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -390 430 0 0 {name=C4 model=cap_mim_m3_1 W=0.4208 L=0.4208 MF=1 spiceprefix=X}
+C {gnd.sym} -430 320 3 0 {name=l5 lab=GND}
+C {gnd.sym} -300 320 3 0 {name=l6 lab=GND}
+C {sky130_fd_pr/res_high_po_5p73.sym} 120 340 2 0 {name=R6
+L=69.65
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {sky130_fd_pr/res_high_po_5p73.sym} 270 340 0 0 {name=R7
+L=69.65
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {gnd.sym} 200 360 0 0 {name=l7 lab=GND}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 150 280 3 0 {name=C2 model=cap_mim_m3_1 W=5.7921 L=5.7921 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 240 280 3 0 {name=C5 model=cap_mim_m3_1 W=5.7921 L=5.7921 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -70 -50 3 0 {name=C6 model=cap_mim_m3_1 W=0.2019 L=0.2019 MF=1 spiceprefix=X}
+C {sky130_fd_pr/res_high_po_5p73.sym} -240 -90 0 0 {name=R8
+L=796.338
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {sky130_fd_pr/res_high_po_5p73.sym} 80 -90 0 0 {name=R1
+L=796.338
+model=res_high_po_5p73
+spiceprefix=X
+mult=4}
+C {sky130_fd_pr/nfet_01v8.sym} -100 180 0 0 {name=M5
+W=1.23
+L=0.45
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
 }

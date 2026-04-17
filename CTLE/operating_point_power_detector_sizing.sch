@@ -198,16 +198,16 @@ C {lab_pin.sym} 280 -30 0 1 {name=p5 sig_type=std_logic lab=Vlf_pos
 C {lab_pin.sym} 280 30 0 1 {name=p6 sig_type=std_logic lab=Vlf_neg
 
 }
-C {vsource.sym} -260 290 0 0 {name=VHF_POS value="SIN(0.9 4m 5G)" savecurrent=false}
-C {vsource.sym} -80 290 0 0 {name=VLF_POS value="SIN(0.9 200m 2G)" savecurrent=false}
+C {vsource.sym} -260 290 0 0 {name=VHF_POS value="0.9" savecurrent=false}
+C {vsource.sym} -80 290 0 0 {name=VLF_POS value="0.9" savecurrent=false}
 C {lab_pin.sym} -310 400 0 0 {name=p7 sig_type=std_logic lab=Vhf_neg
 
 }
-C {vsource.sym} -260 370 2 0 {name=VHF_NEG value="SIN(0.9 -4m 5G)" savecurrent=false}
+C {vsource.sym} -260 370 2 0 {name=VHF_NEG value="0.9" savecurrent=false}
 C {lab_pin.sym} -310 260 0 0 {name=p8 sig_type=std_logic lab=Vhf_pos
 }
 C {gnd.sym} -140 330 3 0 {name=l3 lab=GND}
-C {vsource.sym} -80 370 2 0 {name=V5 value="SIN(0.9 -200m 2G)" savecurrent=false}
+C {vsource.sym} -80 370 2 0 {name=V5 value="0.9" savecurrent=false}
 C {gnd.sym} 30 330 3 0 {name=l4 lab=GND}
 C {lab_pin.sym} -50 400 0 1 {name=p9 sig_type=std_logic lab=Vlf_neg
 

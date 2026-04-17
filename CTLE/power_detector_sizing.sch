@@ -6,36 +6,38 @@ S {}
 F {}
 E {}
 B 2 -1450 -280 -650 120 {flags=graph
-y1=0.32
+y1=0.98
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x2=7.2360588e-09
+x2=1.1813563e-08
 divx=5
 subdivx=4
 xlabmag=1.0
 ylabmag=1.0
 node="vout_pos
-vout_neg"
-color="4 5"
+vout_neg
+vhf
+vlf"
+color="4 5 6 6"
 dataset=-1
 unitx=1
 logx=0
 logy=0
 autoload=0
 rawfile=$netlist_dir/power_detector_sizing.raw
-x1=6.0850106e-09
-y2=0.87
+x1=3.8135634e-09
+y2=1.53
 legend=1
 sim_type=tran}
-B 2 -1440 160 -640 560 {flags=graph
+B 2 -1440 170 -640 570 {flags=graph
 ypos1=0
 ypos2=2
 unity=1
-x1=6.0850106e-09
-x2=7.2360588e-09
+x1=3.8135634e-09
+x2=1.1813563e-08
 divx=5
 xlabmag=1.0
 ylabmag=1.0
@@ -51,13 +53,12 @@ autoload=1
 subdivx=1
 sim_type=tran
 hilight_wave=0
-y2=0.81
-y1=-0.09
+y1=-1
 color="4 5 6"
 node="vhf
 vlf
-vdiff_0.253e-15"}
-P 4 5 -320 -1240 210 -1240 210 -1940 -320 -1940 -320 -1240 {}
+vdiff_0.253e-15"
+y2=1}
 T {Load sky 130 spice models
 Faster version than above by
 presenting only the selected
@@ -184,7 +185,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} -30 30 0 0 {name=M3
 W=1.23
-L=0.75
+L=0.45
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -222,8 +223,8 @@ C {lab_pin.sym} 280 -30 0 1 {name=p5 sig_type=std_logic lab=Vlf_pos
 C {lab_pin.sym} 280 30 0 1 {name=p6 sig_type=std_logic lab=Vlf_neg
 
 }
-C {vsource.sym} -320 290 0 1 {name=VHF_POS value="PULSE(0.4 0 0 20p 20p 105p 250p)" savecurrent=false}
-C {vsource.sym} 0 290 0 0 {name=VLF_POS value="PULSE(0 0.4 0 20p 20p 105p 250p)" savecurrent=false}
+C {vsource.sym} -320 290 0 1 {name=VHF_POS value="PULSE(0.4 0 0 20p 20p 1050p 2500p)" savecurrent=false}
+C {vsource.sym} 0 290 0 0 {name=VLF_POS value="PULSE(0 0.4 0 20p 20p 1050p 2500p)" savecurrent=false}
 C {lab_pin.sym} -370 430 0 0 {name=p7 sig_type=std_logic lab=Vhf_neg
 
 }
@@ -256,9 +257,11 @@ value="
         alter C1 $c
         reset
         tran 0.01n 10n
-        let vdiff_$c = v(Vout_pos) - v(Vout_neg)
+        let vdiff = v(Vout_pos) - v(Vout_neg)
         let vhf   = v(Vhf_pos)  - v(Vhf_neg)
         let vlf   = v(Vlf_pos)  - v(Vlf_neg)
+        plot vhf vlf vdiff
+	plot v(Vout_pos) v(Vout_neg) 
     end
     write power_detector_sizing.raw
 .endc
