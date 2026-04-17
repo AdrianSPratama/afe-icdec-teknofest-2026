@@ -1,0 +1,23 @@
+** sch_path: /foss/designs/afe-icdec-teknofest-2026/tline/tline_tb.sch
+**.subckt tline_tb
+V1 transmitter GND PULSE(0 1 1n 0.01n 0 1G 1G 1)
+R1 load GND 60 m=1
+R2 transmitter source 50 m=1
+T2 source GND load GND Z0=50 TD=1n
+**** begin user architecture code
+
+
+
+.tran 0.001n 50n
+.save all
+.control
+run
+write tline_tb.raw
+plot v(source) v(load) v(transmitter)
+endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

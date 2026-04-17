@@ -49,6 +49,19 @@ N 280 -100 300 -100 {lab=node_mir}
 N -50 -100 -10 -100 {lab=GND}
 N -50 -100 -50 -60 {lab=GND}
 N -50 -60 -10 -60 {lab=GND}
+N 180 -620 180 -610 {lab=vdd}
+N 180 -700 180 -680 {lab=vdd}
+N 360 -620 360 -610 {lab=vdd}
+N 360 -700 360 -680 {lab=vdd}
+N 10 -500 10 -480 {lab=outp}
+N 10 -500 180 -500 {lab=outp}
+N 10 -420 10 -400 {lab=GND}
+N 525 -495 525 -475 {lab=outn}
+N 525 -415 525 -395 {lab=GND}
+N 360 -495 520 -495 {lab=outn}
+N 520 -495 525 -495 {lab=outn}
+N 180 -680 180 -620 {lab=vdd}
+N 360 -680 360 -620 {lab=vdd}
 C {title.sym} -130 90 0 0 {name=l1 author="Stefan Schippers"}
 C {code_shown.sym} 480 -290 0 0 {name=s1 only_toplevel=false 
 value=".lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
@@ -68,8 +81,8 @@ C {vsource.sym} -420 -310 0 0 {name=V2 value="DC 0.9 AC 0.5 0"
  savecurrent=false}
 C {vsource.sym} -420 -140 0 0 {name=V3 value="DC 0.9 AC 0.5 180" savecurrent=false}
 C {lab_pin.sym} -300 -390 0 0 {name=p7 sig_type=std_logic lab=vdd}
-C {lab_pin.sym} 180 -610 0 0 {name=p12 sig_type=std_logic lab=vdd}
-C {lab_pin.sym} 360 -610 0 0 {name=p18 sig_type=std_logic lab=vdd}
+C {lab_pin.sym} 180 -700 0 0 {name=p12 sig_type=std_logic lab=vdd}
+C {lab_pin.sym} 360 -700 0 0 {name=p18 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 110 -440 0 0 {name=p1 sig_type=std_logic lab=in+}
 C {lab_pin.sym} -420 -370 0 0 {name=p3 sig_type=std_logic lab=in+}
 C {lab_pin.sym} -420 -200 0 0 {name=p2 sig_type=std_logic lab=in-
@@ -92,7 +105,7 @@ C {sky130_fd_pr/nfet_01v8_lvt.sym} 160 -440 0 0 {name=M1
 W=2
 L=0.15
 nf=1
-mult=30
+mult=15
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -106,7 +119,7 @@ C {sky130_fd_pr/nfet_01v8_lvt.sym} 380 -440 0 1 {name=M2
 W=2
 L=0.15
 nf=1
-mult=30
+mult=15
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -130,9 +143,9 @@ C {lab_pin.sym} -10 -50 0 0 {name=p16 sig_type=std_logic lab=GND
 }
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 160 -100 0 0 {name=M3
 W=2
-L=0.15
+L=1
 nf=1
-mult=72
+mult=24
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -144,9 +157,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 340 -100 0 0 {name=M4
 W=2
-L=0.15
+L=1
 nf=1
-mult=72
+mult=24
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -158,7 +171,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 10 -100 0 1 {name=M5
 W=2
-L=0.15
+L=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -171,22 +184,34 @@ model=nfet_01v8_lvt
 spiceprefix=X
 }
 C {res.sym} 180 -540 0 0 {name=RD1
-value=550
+value=280
 footprint=1206
 device=resistor
 m=1}
 C {res.sym} 360 -540 0 0 {name=RD2
-value=550
+value=280
 footprint=1206
 device=resistor
 m=1}
 C {capa.sym} 280 -370 3 0 {name=CS
 m=1
-value=300f
+value=134f
 footprint=1206
 device="ceramic capacitor"}
 C {res.sym} 280 -240 3 0 {name=RS
-value=8k
+value=1400
 footprint=1206
 device=resistor
 m=1}
+C {capa.sym} 10 -450 0 0 {name=C1
+m=1
+value=20f
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} 10 -400 0 0 {name=l5 lab=GND}
+C {capa.sym} 525 -445 0 1 {name=C2
+m=1
+value=20f
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} 525 -395 0 1 {name=l6 lab=GND}

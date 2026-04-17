@@ -1,0 +1,28 @@
+** sch_path: /foss/designs/ctle/ctle_sym.sch
+**.subckt ctle_sym VDD outn outp INP INN GND IBIAS
+*.opin outp
+*.opin outn
+*.ipin INN
+*.iopin VDD
+*.iopin GND
+*.iopin IBIAS
+*.ipin INP
+XM1 outp INP net1 GND sky130_fd_pr__nfet_01v8_lvt L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=15 m=15
+XM2 outn INN net2 GND sky130_fd_pr__nfet_01v8_lvt L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=15 m=15
+XM3 net1 IBIAS GND GND sky130_fd_pr__nfet_01v8_lvt L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=24 m=24
+XM4 net2 IBIAS GND GND sky130_fd_pr__nfet_01v8_lvt L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=24 m=24
+XM5 IBIAS IBIAS GND GND sky130_fd_pr__nfet_01v8_lvt L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+RD1 VDD outp 280 m=1
+RD2 VDD outn 280 m=1
+CS net1 net2 134f m=1
+RS net1 net2 1400 m=1
+CL1 outp GND 20f m=1
+CL2 outn GND 20f m=1
+**.ends
+.GLOBAL GND
+.end
