@@ -329,3 +329,4 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {ipin.sym} 320 -340 0 0 {name=p6 sig_type=std_logic lab=IB1_16u}
+C {ipin.sym} 680 -250 3 0 {name=p11 lab=vcmref}
