@@ -116,7 +116,6 @@ N 610 -840 680 -840 {lab=OUT}
 N 510 -840 550 -840 {lab=OUT}
 N 440 -840 440 -480 {lab=OUT}
 N 550 -840 610 -840 {lab=OUT}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 130 -200 1 1 {name=x1}
 C {sky130_fd_pr/pfet_01v8.sym} 380 -540 0 0 {name=M1
 W=20
 L=5
@@ -280,3 +279,4 @@ C {lab_pin.sym} 180 -280 0 1 {name=p11 sig_type=std_logic lab=VBE1}
 C {lab_pin.sym} 400 -290 0 1 {name=p12 sig_type=std_logic lab=VBE2}
 C {title.sym} 610 -70 0 0 {name=l2 author="Dzaki Andriansyah"}
 C {lab_pin.sym} 680 -840 0 1 {name=p5 sig_type=std_logic lab=OUT}
+C {bgr-opamp2.sym} 420 -210 3 0 {name=x1}

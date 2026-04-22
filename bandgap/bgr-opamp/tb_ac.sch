@@ -101,9 +101,6 @@ C {lab_pin.sym} 190 -390 0 0 {name=p24 sig_type=std_logic lab=VPr}
 C {lab_pin.sym} 500 -410 0 1 {name=p25 sig_type=std_logic lab=OUT3}
 C {lab_pin.sym} 260 -500 0 1 {name=p26 sig_type=std_logic lab=VDDr}
 C {lab_pin.sym} 260 -340 0 0 {name=p27 sig_type=std_logic lab=VSS}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 90 -780 0 0 {name=x1}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 90 -530 0 0 {name=x2}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 60 -250 0 0 {name=x3}
 C {devices/title.sym} 290 -80 0 0 {name=l3 author="Dzaki Andriansyah"}
 C {vsource.sym} 650 -890 0 0 {name=V9 value="ac -1m dc 0.9" savecurrent=false}
 C {vsource.sym} 800 -790 0 0 {name=V10 value="ac 1m dc 0.9" savecurrent=false}
@@ -129,3 +126,6 @@ C {lab_pin.sym} 650 -660 0 0 {name=p41 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 650 -570 0 0 {name=p42 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 650 -720 0 0 {name=p43 sig_type=std_logic lab=VNr}
 C {lab_pin.sym} 650 -630 0 0 {name=p44 sig_type=std_logic lab=VPr}
+C {/foss/designs/afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 60 -250 0 0 {name=x1}
+C {/foss/designs/afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 90 -530 0 0 {name=x2}
+C {/foss/designs/afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 90 -780 0 0 {name=x3}

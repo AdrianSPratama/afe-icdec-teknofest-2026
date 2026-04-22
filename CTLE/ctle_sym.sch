@@ -46,19 +46,14 @@ N 470 -740 470 -730 {lab=VDD}
 N 470 -820 470 -800 {lab=VDD}
 N 650 -740 650 -730 {lab=VDD}
 N 650 -820 650 -800 {lab=VDD}
-N 300 -620 300 -600 {lab=outp}
-N 300 -620 470 -620 {lab=outp}
-N 300 -540 300 -520 {lab=GND}
-N 815 -615 815 -595 {lab=outn}
-N 815 -535 815 -515 {lab=GND}
-N 650 -615 810 -615 {lab=outn}
-N 810 -615 815 -615 {lab=outn}
 N 470 -800 470 -740 {lab=VDD}
 N 650 -800 650 -740 {lab=VDD}
 N 470 -820 650 -820 {lab=VDD}
 N 370 -220 370 -120 {lab=IBIAS}
 N 370 -120 570 -120 {lab=IBIAS}
 N 570 -220 570 -120 {lab=IBIAS}
+N 320 -610 470 -610 {lab=outp}
+N 650 -610 820 -610 {lab=outn}
 C {title.sym} 160 -30 0 0 {name=l1 author="Rifki Afriadi"}
 C {opin.sym} 470 -610 0 0 {name=p5 lab=outp}
 C {opin.sym} 650 -610 0 1 {name=p6 lab=outn}
@@ -97,8 +92,6 @@ model=nfet_01v8_lvt
 spiceprefix=X
 }
 C {lab_pin.sym} 650 -160 0 0 {name=p13 sig_type=std_logic lab=GND
-}
-C {lab_pin.sym} 470 -160 0 0 {name=p15 sig_type=std_logic lab=GND
 }
 C {lab_pin.sym} 280 -170 0 0 {name=p16 sig_type=std_logic lab=GND
 }
@@ -164,20 +157,24 @@ value=1400
 footprint=1206
 device=resistor
 m=1}
-C {capa.sym} 300 -570 0 0 {name=CL1
-m=1
-value=20f
-footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 300 -520 0 0 {name=l5 lab=GND}
-C {capa.sym} 815 -565 0 1 {name=CL2
-m=1
-value=20f
-footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 815 -515 0 1 {name=l6 lab=GND}
 C {ipin.sym} 720 -560 0 1 {name=p10 lab=INN}
 C {iopin.sym} 560 -820 3 0 {name=p11 lab=VDD}
 C {iopin.sym} 100 -440 3 0 {name=p20 lab=GND}
 C {iopin.sym} 280 -300 3 0 {name=p8 lab=IBIAS}
 C {ipin.sym} 400 -560 0 0 {name=p9 lab=INP}
+C {capa.sym} 320 -580 0 0 {name=C1
+m=1
+value=20f
+footprint=1206
+device="ceramic capacitor"}
+C {capa.sym} 820 -580 0 0 {name=C2
+m=1
+value=20f
+footprint=1206
+device="ceramic capacitor"}
+C {lab_pin.sym} 470 -160 0 0 {name=p1 sig_type=std_logic lab=GND
+}
+C {lab_pin.sym} 320 -550 0 0 {name=p2 sig_type=std_logic lab=GND
+}
+C {lab_pin.sym} 820 -550 0 0 {name=p3 sig_type=std_logic lab=GND
+}

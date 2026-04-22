@@ -61,7 +61,7 @@ N 815 -535 815 -515 {lab=GND}
 N 650 -615 810 -615 {lab=outn}
 N 810 -615 815 -615 {lab=outn}
 C {title.sym} 160 -30 0 0 {name=l1 author="Rifki Afriadi"}
-C {code_shown.sym} 770 -410 0 0 {name=s1 only_toplevel=false 
+C {code_shown.sym} -520 -730 0 0 {name=s1 only_toplevel=false 
 value=".lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
 .control
