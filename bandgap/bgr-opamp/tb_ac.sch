@@ -79,7 +79,7 @@ value=".control
 "}
 C {lab_pin.sym} 220 -960 0 0 {name=p1 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 220 -920 0 0 {name=p3 sig_type=std_logic lab=VP}
-C {sky130_fd_pr/corner.sym} 690 -390 0 0 {name=CORNER only_toplevel=true corner=tt}
+C {sky130_fd_pr/corner.sym} 690 -390 0 0 {name=CORNER only_toplevel=true corner=fs}
 C {lab_pin.sym} 440 -940 0 1 {name=p6 sig_type=std_logic lab=OUT}
 C {capa-2.sym} 440 -910 0 0 {name=C2
 m=1

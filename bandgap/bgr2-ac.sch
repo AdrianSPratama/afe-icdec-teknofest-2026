@@ -117,7 +117,10 @@ N 1020 -430 1020 -320 {lab=VSS}
 N 1020 -260 1020 -120 {lab=VSS}
 N 950 -320 950 -260 {lab=VSS}
 N 1020 -320 1020 -260 {lab=VSS}
-C {afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 190 -130 1 1 {name=x1}
+N 400 -400 460 -380 {lab=OUT}
+N 400 -470 400 -460 {lab=#net1}
+N 300 -470 300 -460 {lab=#net1}
+N 240 -380 300 -400 {lab=#net2}
 C {sky130_fd_pr/pfet_01v8.sym} 440 -470 0 0 {name=M1
 W=20
 L=5
@@ -147,7 +150,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {res.sym} 460 -340 0 0 {name=R1
-value=980k
+value=985k
 footprint=1206
 device=resistor
 m=1}
@@ -168,7 +171,7 @@ spiceprefix=X
 }
 C {lab_pin.sym} 410 -330 0 1 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 290 -330 0 0 {name=p2 sig_type=std_logic lab=VSS}
-C {vsource.sym} 1180 -540 0 0 {name=V1 value="DC 1.8 AC 1m" savecurrent=false}
+C {vsource.sym} 1180 -540 0 0 {name=V1 value="DC 1.9 AC 1m" savecurrent=false}
 C {vsource.sym} 1400 -540 0 0 {name=V2 value="DC 0" savecurrent=false}
 C {lab_pin.sym} 1180 -510 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 1400 -570 0 0 {name=p8 sig_type=std_logic lab=VSS}
@@ -284,3 +287,8 @@ spiceprefix=X
 }
 C {lab_pin.sym} 240 -210 0 1 {name=p11 sig_type=std_logic lab=VBE1}
 C {lab_pin.sym} 510 -610 0 1 {name=p12 sig_type=std_logic lab=OUT}
+C {/foss/designs/afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 190 -130 1 1 {name=x1}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 300 -430 0 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=4 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 400 -430 0 0 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=4 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 620 -800 0 0 {name=C3 model=cap_mim_m3_1 W=45 L=45 MF=1 spiceprefix=X}
+C {lab_pin.sym} 620 -770 0 0 {name=p5 sig_type=std_logic lab=VSS}

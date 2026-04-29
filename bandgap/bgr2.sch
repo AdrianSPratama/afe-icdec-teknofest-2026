@@ -118,6 +118,13 @@ N 550 -840 610 -840 {lab=OUT}
 N 560 -430 560 -370 {lab=#net3}
 N 560 -370 560 -310 {lab=#net3}
 N 560 -250 560 -190 {lab=VSS}
+N 20 -570 90 -570 {lab=VDD}
+N 50 -570 50 -540 {lab=VDD}
+N 90 -540 140 -540 {lab=#net1}
+N 140 -540 160 -550 {lab=#net1}
+N 160 -550 240 -550 {lab=#net1}
+N 240 -550 250 -540 {lab=#net1}
+N 50 -510 50 -500 {lab=VSS}
 C {sky130_fd_pr/pfet_01v8.sym} 380 -540 0 0 {name=M1
 W=20
 L=5
@@ -177,8 +184,9 @@ C {lab_pin.sym} 1120 -640 0 0 {name=p9 sig_type=std_logic lab=VDD}
 C {sky130_fd_pr/corner.sym} 1070 -460 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {code_shown.sym} 1380 -950 0 0 {name=s1 only_toplevel=false value="
 
+.temp 125
 .control
- DC temp -40 125 1
+ DC v1 1.62 1.98 0.0001
  plot OUT2
  let PTAT = 4.94*(VBE2 - VBE1)
  let CC = 4.94*(VBE5)
@@ -191,6 +199,7 @@ C {code_shown.sym} 1380 -950 0 0 {name=s1 only_toplevel=false value="
  plot i(Vmeas)
  plot pwr
  plot OUT PTAT CTAT
+ plot OUT VDD
  plot VREF
  plot VERR
  plot VREF - VERR()
@@ -198,7 +207,7 @@ C {code_shown.sym} 1380 -950 0 0 {name=s1 only_toplevel=false value="
  
 .endc
 "}
-C {lab_pin.sym} 90 -570 0 0 {name=p3 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 20 -570 0 0 {name=p3 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 90 -190 0 0 {name=p4 sig_type=std_logic lab=VSS}
 C {sky130_fd_pr/pfet_01v8.sym} 540 -540 0 0 {name=M3
 W=2
@@ -295,3 +304,18 @@ footprint=1206
 device=resistor
 m=1}
 C {/foss/designs/afe-icdec-teknofest-2026/bandgap/bgr-opamp/bgr-opamp.sym} 130 -200 1 1 {name=x1}
+C {sky130_fd_pr/pfet_01v8.sym} 70 -540 0 1 {name=M9
+W=20
+L=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {lab_pin.sym} 50 -500 0 0 {name=p6 sig_type=std_logic lab=VSS}
